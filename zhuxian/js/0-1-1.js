@@ -30,7 +30,7 @@ $(document).ready(function () {
         ].join('')
         alertPlaceholder.append(wrapper)
     }
-    
+
     function alertSuccess(message) {
         if (document.getElementById("closebtn")) {
             $("#closebtn").trigger("click")
@@ -46,12 +46,17 @@ $(document).ready(function () {
         alertPlaceholder.append(wrapper)
     }
 
-    function printLine(text, id){
+    function printLine(text, id) {
         const element = document.getElementById(id)
-        for 
+            for(int i = 0; i < text.length; i++){
+                setTimeout(,10)
+            } 
+
     }
 
-    function print(list){
-        
+    function print(list) {
+
     }
+
+    
 })
