@@ -46,4 +46,7 @@ $(document).ready(function () {
         alertPlaceholder.append(wrapper)
     }
 
+    function printLine(text, id){
+        
+    }
 })
