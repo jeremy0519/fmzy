@@ -4,8 +4,16 @@ Parse.serverURL = 'http://43.142.126.163:1337/parse'
 const classData = Parse.Object.extend("fmzy")
 
 function check() {
-    log("开始更新用户名")
-        
+    const objid = Cookies.get("objectId")
+    const query = new Parse.Query(classData)
+    query.get(objid).then((xxx) => {
+        const yyy = xxx.get("nextPage")
+        if (yyy != "0-1-1"){
+            window.location.href = "http://43.142.126.163"
+        }
+       
+    }, (error) => {
+    })
 }
 
 function log(text) {
@@ -19,8 +27,6 @@ function log(text) {
         `</p>`].join("")
     $("#logArea").append(element)
 }
-log("开始记录log")
-log("936936")
 
 if (Cookies.get('objectId') == undefined) {
     window.location.href = 'http://43.142.126.163/signin.html'
