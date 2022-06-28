@@ -47,6 +47,11 @@ $(document).ready(function () {
     }
 
     function printLine(text, id){
+        const element = document.getElementById(id)
+        for 
+    }
+
+    function print(list){
         
     }
 })
