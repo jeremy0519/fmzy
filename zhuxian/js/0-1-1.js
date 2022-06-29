@@ -30,7 +30,6 @@ $(document).ready(function () {
         ].join('')
         alertPlaceholder.append(wrapper)
     }
-
     function alertSuccess(message) {
         if (document.getElementById("closebtn")) {
             $("#closebtn").trigger("click")
@@ -45,18 +44,37 @@ $(document).ready(function () {
         ].join('')
         alertPlaceholder.append(wrapper)
     }
-
-    function printLine(text, id) {
-        const element = document.getElementById(id)
-            for(int i = 0; i < text.length; i++){
-                setTimeout(,10)
-            } 
-
+    function sleep(time) {
+        return new Promise((resolve) => setTimeout(resolve, time))
     }
 
-    function print(list) {
-
+    async function print(list) {
+        for (var j = 0; j < list.length; j++) {
+            log("当前j："+j)
+            var ele = document.createElement("p")
+            ele.id = "zx" + j
+            ele.setAttribute("class","text-start text-break")
+            $("#main").append(ele)
+            log("元素创建完毕，id："+"zx" + j)
+            const element = document.getElementById("zx" + j)
+            log("接收到text：" + list[j])
+            log("text长度：" + list[j].length)
+            for (var i = 0; i <= list[j].length; i++) {
+                log("当前i：" + i)
+                log("当前substring：" + list[j].substr(0, i))
+                element.innerHTML = list[j].substr(0, i)
+                await sleep(1000)
+                log("睡眠1秒结束")
+            }
+            await sleep(2000)
+            log("睡眠2秒结束")
+        }
     }
+    var zhuxian = new Array()
+    zhuxian[0] = "936"
+    zhuxian[1] = "1038"
+    zhuxian[2] = "133"
+    zhuxian[3] = "2735"
+    print(zhuxian)
 
-    
 })
