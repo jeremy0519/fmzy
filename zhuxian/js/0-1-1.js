@@ -63,7 +63,7 @@ $(document).ready(function () {
                 log("当前i：" + i)
                 log("当前substring：" + list[j].substr(0, i))
                 element.innerHTML = list[j].substr(0, i)
-                await sleep(1000)
+                await sleep(10)
                 log("睡眠1秒结束")
             }
             await sleep(2000)
