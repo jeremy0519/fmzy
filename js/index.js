@@ -30,7 +30,7 @@ $(document).ready(function () {
         ].join('')
         alertPlaceholder.append(wrapper)
     }
-    
+
     function alertSuccess(message) {
         if (document.getElementById("closebtn")) {
             $("#closebtn").trigger("click")
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
     updateWelcomeMessage()
 
-    $("#continue").click(function(){
+    $("#continue").click(function () {
         log("检测到点击继续主线")
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
@@ -81,7 +81,7 @@ $(document).ready(function () {
         })
     })
 
-    $("#startNew").click(function(){
+    $("#startNew").click(function () {
         log("检测到点击开始新主线")
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
@@ -90,20 +90,11 @@ $(document).ready(function () {
                 log("设置为0-1-1")
                 yyy.set("nextPage", "0-1-1")
                 return yyy.save()
-              })
+            })
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
     })
 
-    $("#logout").click(function () {
-        log("开始清除cookie")
-        Cookies.remove("objectId")
-        alertSuccess("已注销，3秒后跳转登录页")
-        setTimeout(function () { window.location.href = "/signin.html" }, 3000)
-    })
 
-    $("#enterHome").click(function () {
-        window.location.href = "/home.html?" + Cookies.get("objectId")
-    })
 })
