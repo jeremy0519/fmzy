@@ -87,13 +87,17 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         query.get(objid).then((xxx) => {
             xxx.save().then((yyy) => {
-                log("设置为0-1-1")
+                log("正在设置为0-1-1")
                 yyy.set("nextPage", "0-1-1")
                 return yyy.save()
             })
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
+        if (document.getElementById("close1")) {
+            $("#close1").trigger("click")
+        }
+        alertSuccess("成功初始化进度！")
     })
 
 

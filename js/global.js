@@ -13,14 +13,14 @@ $(document).ready(function () {
             `</p>`].join("")
         $("#logArea").append(element)
     }
-
+    const alertPlaceholder = $('#liveAlertPlaceholder')
     function alertError(message) {
         if (document.getElementById("closebtn")) {
             $("#closebtn").trigger("click")
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert ms-3 me-3 fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
@@ -35,7 +35,7 @@ $(document).ready(function () {
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert ms-3 me-3 fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
@@ -57,16 +57,16 @@ $(document).ready(function () {
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
+        $("#logout").click(function () {
+            log("开始清除cookie")
+            Cookies.remove("objectId")
+            alertSuccess("已注销，3秒后跳转登录页")
+            setTimeout(function () { window.location.href = "/signin.html" }, 3000)
+        })
 
+        $("#enterHome").click(function () {
+            window.location.href = "/home.html?" + Cookies.get("objectId")
+        })
     }
-    $("#logout").click(function () {
-        log("开始清除cookie")
-        Cookies.remove("objectId")
-        alertSuccess("已注销，3秒后跳转登录页")
-        setTimeout(function () { window.location.href = "/signin.html" }, 3000)
-    })
 
-    $("#enterHome").click(function () {
-        window.location.href = "/home.html?" + Cookies.get("objectId")
-    })
 })

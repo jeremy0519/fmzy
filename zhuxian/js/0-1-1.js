@@ -53,7 +53,7 @@ $(document).ready(function () {
             log("当前j："+j)
             var ele = document.createElement("p")
             ele.id = "zx" + j
-            ele.setAttribute("class","text-start text-break")
+            ele.setAttribute("class","text-start mt-0 mb-0 text-break")
             $("#main").append(ele)
             log("元素创建完毕，id："+"zx" + j)
             const element = document.getElementById("zx" + j)
