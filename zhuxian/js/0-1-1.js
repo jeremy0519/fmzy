@@ -48,6 +48,19 @@ $(document).ready(function () {
         return new Promise((resolve) => setTimeout(resolve, time))
     }
 
+    // 点击按钮后开始
+    $("#startbtn").click(function () {
+        // 放入音乐
+        const music = document.createElement("iframe")
+        music.setAttribute("frameborder","no")
+        music.setAttribute("border","0")
+        music.setAttribute("marginwidth","0")
+        music.setAttribute("marginheight","0")
+        music.setAttribute("width",330)
+        music.setAttribute("height",86)
+        music.setAttribute("src","http://music.163.com/outchain/player?type=2&id=101126&auto=1&height=66")
+        $("#musicPlaceholder").append(music)
+    })
     async function print(list) {
         for (var j = 0; j < list.length; j++) {
             log("当前j：" + j)

@@ -18,7 +18,6 @@ $(document).ready(function () {
         appKey: 'r34nQnYth9ssYEJuXLzTl1DC',
         placeholder: "说点什么吧，说完之后就不能撤回了哦！",
         avatar: "retro",
-        recordIP: true,
         serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com"
     })
     log("评论系统初始化完毕")
