@@ -65,9 +65,7 @@ $(document).ready(function () {
                 user.set("Duguqiuyehaogan", 0)
                 user.set("Lianhaogan", 0)
                 user.set("Yimenghaogan", 0)
-                user.set("nextPage", "0-1-1")
-                user.set("dunwu", 0)
-                user.set("zaoju", [])
+                user.set("nextPage", "0-1")
                 user.set("choices", [])
                 user.save().then((user) => {
                     alertSuccess("注册成功，3秒后跳转首页")

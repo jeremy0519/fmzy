@@ -87,8 +87,8 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         query.get(objid).then((xxx) => {
             xxx.save().then((yyy) => {
-                log("正在设置为0-1-1")
-                yyy.set("nextPage", "0-1-1")
+                log("正在设置为0-1")
+                yyy.set("nextPage", "0-1")
                 return yyy.save()
             })
         }, (error) => {

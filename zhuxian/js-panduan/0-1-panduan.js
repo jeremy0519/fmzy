@@ -8,7 +8,7 @@ function check() {
     const query = new Parse.Query(classData)
     query.get(objid).then((xxx) => {
         const yyy = xxx.get("nextPage")
-        if (yyy != "0-1-1"){
+        if (yyy != "0-1"){
             window.location.href = "http://43.142.126.163"
         }
        
