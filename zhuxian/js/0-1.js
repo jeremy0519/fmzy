@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
@@ -36,7 +36,7 @@ $(document).ready(function () {
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
@@ -47,12 +47,22 @@ $(document).ready(function () {
     function sleep(time) {
         return new Promise((resolve) => setTimeout(resolve, time))
     }
-
+    function logAll(){
+        log("pagehak好感：" + window.local_Pagehakhaogan)
+        log("tang好感：" + window.local_Tanghaogan)
+        log("binxia好感：" + window.local_Binxiahaogan)
+        log("独孤秋夜好感：" + window.local_Duguqiuyehaogan)
+        log("镰好感：" + window.local_Lianhaogan)
+        log("选项：" + window.local_choices)
+        log("造句："+window.local_zaoju)
+        log("顿悟：" + window.local_dunwu)
+    }
     // 01: 从数据库获取好感什么的
     // 02：准备输出第一部分
     // 03：输出第一部分
     // 04: 输出表单
     // 05：设置按钮行为
+    // 06: 转场
 
     async function step01() {
         log("开始第一步：从数据库获取好感什么的")
@@ -65,6 +75,8 @@ $(document).ready(function () {
             window.local_Duguqiuyehaogan = xxx.get("Duguqiuyehaogan")
             window.local_Lianhaogan = xxx.get("Lianhaogan")
             window.local_choices = xxx.get("choices")
+            window.local_zaoju = new Array()
+            window.local_dunwu = 0
             log("获取成功")
             step02()
         }, (error) => {
@@ -73,14 +85,7 @@ $(document).ready(function () {
     }
 
     async function step02() {
-        log("获取到的数据：")
-        log("pagehak好感：" + window.local_Pagehakhaogan)
-        log("tang好感：" + window.local_Tanghaogan)
-        log("binxia好感：" + window.local_Binxiahaogan)
-        log("独孤秋夜好感：" + window.local_Duguqiuyehaogan)
-        log("镰好感：" + window.local_Lianhaogan)
-        log("选项：" + window.local_choices)
-        step03()
+        logAll()
         var zx = new Array()
         zx[0] = "太阳也上升了";
         zx[1] = "——题记";
@@ -98,6 +103,7 @@ $(document).ready(function () {
         zx[13] = "“话说啊，小唐，你真的喜欢数学课吗？和我说实话哦。”";
         zx[14] = "“当然了，数学课对我大有所益啊，怎么可能不喜欢。”唐显然一头雾水，不知道企冬要说什么。";
         zx[15] = "那么，……";
+        log("前往第三步")
         step03(zx)
     }
 
@@ -107,9 +113,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-break")
             $("#zhuxianArea").append(ele)
-            log("元素创建完毕，id：" + "zx" + j)
             const element = document.getElementById("zx" + j)
-            log("接收到text：" + list[j])
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
                 await sleep(10)
@@ -151,22 +155,32 @@ $(document).ready(function () {
         $("#form").submit(function(event){
             event.preventDefault()
             if (document.getElementById("flexRadioDefault1").checked == true){
-                window.temp936_choice = 1
+                step06(1)
             }
             else if (document.getElementById("flexRadioDefault2").checked == true){
-                window.temp936_choice = 2
+                step06(2)
             }
             else if (document.getElementById("flexRadioDefault3").checked == true){
-                window.temp936_choice = 3
+                step06(3)
             }
             else{
                 alertError("请选择一个选项")
             }
-            if (window.temp936_choice != undefined){
-                alertSuccess("检测到输入！")
-                log("检测到输入选项：" + window.temp936_choice)
-            }
         })
+    }
+    function step06(num){
+        alertSuccess("切换")
+        log("检测到输入：" + num)
+        window.local_choices.push(num)
+        if (num==1){
+            window.local_Tanghaogan = window.local_Tanghaogan + 2
+            window.local_zaoju.push(1)
+        }
+        if (num==2){
+            window.local_Tanghaogan = window.local_Tanghaogan + 3
+            window.local_zaoju.push(1)
+        }
+        logAll()
     }
     step01()
 })

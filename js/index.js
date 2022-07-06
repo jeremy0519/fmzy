@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
@@ -37,7 +37,7 @@ $(document).ready(function () {
         }
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div class="alert ms-5 me-5 fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
+            `<div class="alert fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',

@@ -1,4 +1,3 @@
-$(document).ready(function () {
 Parse.initialize("fmzy")
 Parse.serverURL = 'http://43.142.126.163:1337/parse'
 const classData = Parse.Object.extend("fmzy")
@@ -16,21 +15,8 @@ function check() {
     })
 }
 
-function log(text) {
-    var d = new Date()
-    const element = document.createElement('p')
-    element.innerHTML = [
-        `<p class="text-start text-break">`,
-        `${d}`,
-        `: `,
-        `${text}`,
-        `</p>`].join("")
-    $("#logArea").append(element)
-}
-
 if (Cookies.get('objectId') == undefined) {
     window.location.href = 'http://43.142.126.163/signin.html'
 } else {
     check()
 }
-})
