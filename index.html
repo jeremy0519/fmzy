@@ -43,7 +43,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <img class="bi me-2" width="40" height="32" src="logo.ico"></img>
+            <img class="bi me-2" width="32" height="32" src="logo.ico"></img>
             <a class="navbar-brand" href="#">浮梦之屿</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,6 +110,12 @@
                 公告
             </div>
             <div class="card-body">
+                <h5 class="card-title text-start">浮梦之屿ver0.1.0</h5>
+                <p class="card-text text-start mb-0 fst-italic text-muted">2022/07/09</p>
+                <p class="card-text text-start mb-0">1.主线0-1上线！</p>
+                <p class="card-text text-start mb-0">2.UI优化</p>
+            </div>
+            <div class="card-body">
                 <h5 class="card-title text-start">浮梦之屿ver0.0.5</h5>
                 <p class="card-text text-start mb-0">1.UI优化</p>
                 <p class="card-text text-start mb-0">2.内置用户主页功能，尚在开发中</p>
@@ -127,11 +133,6 @@
             <div class="card-body">
                 <h5 class="card-title text-start">浮梦之屿ver0.0.2</h5>
                 <p class="card-text text-start mb-0">1.未注册无法进行评论</p>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-start">浮梦之屿ver0.0.1</h5>
-                <p class="card-text text-start mb-0">1.浮梦之屿上线</p>
-                <p class="card-text text-start mb-0">2.评论功能上线</p>
             </div>
         </div>
 
@@ -152,8 +153,8 @@
                     <div class="col">
                         <div class="card-body">
                             <h5 class="card-title">活动2</h5>
-                            <p class="card-text">历史小游戏</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text">主线0-1上线！</p>
+                            <a href="#" class="btn btn-primary">点击“开始游戏”以体验</a>
                         </div>
                     </div>
                     <div class="col">
@@ -169,7 +170,17 @@
         </div>
         <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </div>
-
+    <!--toast-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" data-bs-delay="5000" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img width="20" height="20" src="//43.142.126.163/logo.ico" class="rounded me-2">
+                <strong class="me-auto">异梦</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">Hello</div>
+        </div>
+    </div>
 </body>
 
 </html>

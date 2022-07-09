@@ -42,6 +42,19 @@ $(document).ready(function () {
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
+
+        // toast
+        const messageList = new Array()
+        messageList[0] = "rage生日快乐！"
+        messageList[1] = "rage生快！"
+        messageList[2] = "祝阿睿生日快乐！"
+        messageList[3] = "祝阿睿生快！"
+        messageList[4] = "936！"
+        const selection = Math.floor(Math.random()*5) //随机数，取值0,1,2,3,4
+        const toast = new bootstrap.Toast(document.getElementById('liveToast'))
+        $("div.toast-body").text(messageList[selection]) //设置文本
+        toast.show()
+
         $("#logout").click(function () {
             Cookies.remove("objectId")
             alertSuccess("已注销，3秒后跳转登录页")

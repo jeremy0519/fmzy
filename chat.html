@@ -17,7 +17,7 @@
     <link href="css/global.css" rel="stylesheet">
     <script src="js/global.js"></script>
     <script>
-        if (Cookies.get("objectId") == undefined){
+        if (Cookies.get("objectId") == undefined) {
             window.location.href = "/signin.html"
         }
     </script>
@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <img class="bi me-2" width="40" height="32" src="logo.ico"></img>
+            <img class="bi me-2" width="32" height="32" src="logo.ico"></img>
             <a class="navbar-brand" href="#">浮梦之屿</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,16 @@
     <div id="vcomments"></div>
     <script src="js/chat.js"></script>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+    <!--toast-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" data-bs-delay="5000" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img width="20" height="20" src="//43.142.126.163/logo.ico" class="rounded me-2">
+                <strong class="me-auto">异梦</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">Hello</div>
+        </div>
     </div>
 
 </body>

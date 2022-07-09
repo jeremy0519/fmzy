@@ -39,7 +39,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <img class="bi me-2" width="40" height="32" src="http://43.142.126.163/logo.ico"></img>
+            <img class="bi me-2" width="32" height="32" src="http://43.142.126.163/logo.ico"></img>
             <a class="navbar-brand" href="#">浮梦之屿</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,10 +71,21 @@
         <div id="liveAlertPlaceholder"></div>
         <h4 class="text-center">主线：0-1</h4>
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=101126&auto=1&height=66"></iframe>
-        <div id="zhuxianArea"></div>
+        <div class="text-center" id="zhuxianArea"></div>
         <div id="formPlaceholder"></div>
-        <hr>
-        <div id="logArea"></div>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2022</p>
+    <!--toast-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" data-bs-delay="5000" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img width="20" height="20" src="//43.142.126.163/logo.ico" class="rounded me-2">
+                <strong class="me-auto">异梦</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">Hello</div>
+        </div>
     </div>
 
 </body>
