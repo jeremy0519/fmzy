@@ -45,16 +45,16 @@ $(document).ready(function () {
 
         // toast
         const messageList = new Array()
-        messageList[0] = "rage生日快乐！"
-        messageList[1] = "rage生快！"
-        messageList[2] = "祝阿睿生日快乐！"
-        messageList[3] = "祝阿睿生快！"
-        messageList[4] = "936！"
+        messageList[0] = "主线上线啦！记得去看看~"
+        messageList[1] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[2] = "感谢底层代码员72P！"
+        messageList[3] = "感谢文案与创意入股成员Rage！"
+        messageList[4] = "感谢技术参与与代码员麦克斯韦！"
         const selection = Math.floor(Math.random()*5) //随机数，取值0,1,2,3,4
         const toast = new bootstrap.Toast(document.getElementById('liveToast'))
         $("div.toast-body").text(messageList[selection]) //设置文本
         toast.show()
-
+        //呜哇，谢谢小唐呜呜呜
         $("#logout").click(function () {
             Cookies.remove("objectId")
             alertSuccess("已注销，3秒后跳转登录页")

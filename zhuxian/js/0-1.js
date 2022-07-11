@@ -581,14 +581,14 @@ $(document).ready(function () {
         $("#queryhaogan").click(function () {
             alert(
                 "pagehak好感：" + window.local_Pagehakhaogan +
-                "tang好感：" + window.local_Tanghaogan +
-                "binxia好感：" + window.local_Binxiahaogan +
-                "独孤秋夜好感：" + window.local_Duguqiuyehaogan +
-                "镰好感：" + window.local_Lianhaogan +
-                "yimeng好感：" + window.local_Yimenghaogan +
-                "选项：" + window.local_choices +
-                "道具：" + window.local_daoju +
-                "顿悟：" + window.local_dunwu)
+                " tang好感：" + window.local_Tanghaogan +
+                " binxia好感：" + window.local_Binxiahaogan +
+                " 独孤秋夜好感：" + window.local_Duguqiuyehaogan +
+                " 镰好感：" + window.local_Lianhaogan +
+                " yimeng好感：" + window.local_Yimenghaogan +
+                " 选项：" + window.local_choices +
+                " 道具：" + window.local_daoju +
+                " 顿悟：" + window.local_dunwu)
         })
         $("#redirect").click(function () {
             window.location.href = "http://43.142.126.163/zhuxian/0-2.html"
