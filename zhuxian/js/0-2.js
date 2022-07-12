@@ -263,8 +263,12 @@ $(document).ready(function () {
 	        zx[5]="身体没问题，在医务室居然有缓慢的精神回复效果——正当企冬探唐的鼻息时，唐血鸿的眼睛悠悠睁开，喉咙里逸出几个虚弱的字：“这是哪里……”"
             if(window.local_daoju[1] == 1){
                 zx[6]="“这里是你的梦境。”企冬犹豫了一下，还是把事情全盘托出，“我……进来了，发现你在做噩梦。”"
-                if(window.local_daoju[2] == 1) zx[7]="唐血鸿好像也记得了什么，只不过他一想到那亲密的动作……他的脸微微有些发红，赶紧甩了甩头，“你能进入我的梦？”"
-                else zx[7]="“你……能进入我的梦境？”唐很诧异，“我可没听说你有这么神的超能力。”"
+                if(window.local_daoju[2] == 1){
+                    zx[7]="唐血鸿好像也记得了什么，只不过他一想到那亲密的动作……他的脸微微有些发红，赶紧甩了甩头，“你能进入我的梦？”"
+                }
+                else{
+                    zx[7]="“你……能进入我的梦境？”唐很诧异，“我可没听说你有这么神的超能力。”"
+                }
                 zx[8]="“这个……不是保密工作嘛。”企冬挠挠头，“反正我是可以进入其他人的噩梦，但是不常用。”"
                 zx[9]="“嗯，我可以理解。”唐血鸿陷入沉思，“所以，我为什么也会陷入同一个梦境之中？我觉得不是巧合。”"
                 zx[10]="“难道是我的问题？”企冬也学他单手抚摸着下巴，但是非常蹩脚，反而显得很憨。"
@@ -326,8 +330,12 @@ $(document).ready(function () {
             var zx = new Array()
             zx[0]="企冬缓缓恢复了知觉，却听见后面的两个女生窃窃私语：“他们醒了诶！”“是啊，这算不算抱着睡了一会，嘿嘿嘿……”"
 	        zx[1]="企冬这才想起自己还抱着小唐：“你下来吧。”"
-	        if(window.local_Tanghaogan >= 7)zx[2]="唐这才悠悠醒来，感受到企冬抱在自己腰上的双手，简直想找个地缝钻下去。他匆匆下来，背对着企冬。"
-	        else zx[2]="“你为什么抱着我……？”唐正欲问道，但是看企冬不大想回答，他也知趣的闭了嘴，只是眼睛里光芒流转。"
+	        if(window.local_Tanghaogan >= 7){
+                zx[2]="唐这才悠悠醒来，感受到企冬抱在自己腰上的双手，简直想找个地缝钻下去。他匆匆下来，背对着企冬。"
+            }
+	        else{
+                zx[2]="“你为什么抱着我……？”唐正欲问道，但是看企冬不大想回答，他也知趣的闭了嘴，只是眼睛里光芒流转。"
+            }
 	        zx[3]="企冬感觉到自己被后座的女生戳了戳，“诶，你们两个，要不要考虑写篇耽美啊？卖点我都想好了，沉稳闷骚攻x阳光沙雕受。”"
 	        zx[4]="“？？？你们这未免有点离谱。”企冬不满道，“而且，为什么我是受啊，这家伙不是更像受吗。”他偷偷瞄了一眼小唐。令他失望的是，唐好像没有任何表示。"
 	        zx[5]="他们这种状态一直持续到放学。放学时两人照例一起走，但是在到校门口前，唐忽然开口：“今天那个……真的是你吗。”问完这个问题，他好像逃也似地离开了。"
@@ -386,9 +394,10 @@ $(document).ready(function () {
                     yyy.set("Duguqiuyehaogan", window.local_Duguqiuyehaogan)
                     yyy.set("Lianhaogan", window.local_Lianhaogan)
                     yyy.set("Yimenghaogan", window.local_Yimenghaogan)
-                    yyy.set("nextPage", "0-2")
+                    yyy.set("nextPage", "0-3")
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
+                    yyy.set("dunwu", window.local_dunwu)
                     return yyy.save().then(function () {step19()})
                 })
             }, (error) => {
@@ -423,8 +432,7 @@ $(document).ready(function () {
                 " 镰好感：" + window.local_Lianhaogan +
                 " yimeng好感：" + window.local_Yimenghaogan +
                 " 选项：" + window.local_choices +
-                " 道具：" + window.local_daoju +
-                " 顿悟：" + window.local_dunwu)
+                " 道具：" + window.local_daoju)
         })
         $("#redirect").click(function () {
             window.location.href = "http://43.142.126.163/zhuxian/0-3.html"

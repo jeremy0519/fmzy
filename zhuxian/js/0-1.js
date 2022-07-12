@@ -553,6 +553,7 @@ $(document).ready(function () {
                     yyy.set("nextPage", "0-2")
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
+                    yyy.set("dunwu", window.local_dunwu)
                     return yyy.save().then(function () {step27()})
                 })
             }, (error) => {
@@ -587,8 +588,7 @@ $(document).ready(function () {
                 " 镰好感：" + window.local_Lianhaogan +
                 " yimeng好感：" + window.local_Yimenghaogan +
                 " 选项：" + window.local_choices +
-                " 道具：" + window.local_daoju +
-                " 顿悟：" + window.local_dunwu)
+                " 道具：" + window.local_daoju)
         })
         $("#redirect").click(function () {
             window.location.href = "http://43.142.126.163/zhuxian/0-2.html"

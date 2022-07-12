@@ -44,16 +44,80 @@ $(document).ready(function () {
         })
 
         // toast
+        function deliverMessage(sender, content) {
+            const toast = new bootstrap.Toast(document.getElementById('liveToast'))
+            $("strong.me-auto").text(sender)
+            $("div.toast-body").text(content)
+            toast.show()
+        }
+
         const messageList = new Array()
         messageList[0] = "主线上线啦！记得去看看~"
         messageList[1] = "咕咕~浮梦之屿内部人员都是大鸽子~"
-        messageList[2] = "感谢底层代码员72P！"
+        messageList[2] = "感谢底层代码员Array和72P！"
         messageList[3] = "感谢文案与创意入股成员Rage！"
         messageList[4] = "感谢技术参与与代码员麦克斯韦！"
-        const selection = Math.floor(Math.random()*5) //随机数，取值0,1,2,3,4
-        const toast = new bootstrap.Toast(document.getElementById('liveToast'))
-        $("div.toast-body").text(messageList[selection]) //设置文本
-        toast.show()
+        messageList[5] = "主线上线啦！记得去看看~"
+        messageList[6] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[7] = "感谢底层代码员Array和72P！"
+        messageList[8] = "感谢文案与创意入股成员Rage！"
+        messageList[9] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[10] = "主线上线啦！记得去看看~"
+        messageList[11] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[12] = "感谢底层代码员Array和72P！"
+        messageList[13] = "感谢文案与创意入股成员Rage！"
+        messageList[14] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[15] = "主线上线啦！记得去看看~"
+        messageList[16] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[17] = "感谢底层代码员Array和72P！"
+        messageList[18] = "感谢文案与创意入股成员Rage！"
+        messageList[19] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[20] = "主线上线啦！记得去看看~"
+        messageList[21] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[22] = "感谢底层代码员Array和72P！"
+        messageList[23] = "感谢文案与创意入股成员Rage！"
+        messageList[24] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[25] = "主线上线啦！记得去看看~"
+        messageList[26] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[27] = "感谢底层代码员Array和72P！"
+        messageList[28] = "感谢文案与创意入股成员Rage！"
+        messageList[29] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[30] = "主线上线啦！记得去看看~"
+        messageList[31] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[32] = "感谢底层代码员Array和72P！"
+        messageList[33] = "感谢文案与创意入股成员Rage！"
+        messageList[34] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[35] = "主线上线啦！记得去看看~"
+        messageList[36] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[37] = "感谢底层代码员Array和72P！"
+        messageList[38] = "感谢文案与创意入股成员Rage！"
+        messageList[39] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[40] = "主线上线啦！记得去看看~"
+        messageList[41] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[42] = "感谢底层代码员Array和72P！"
+        messageList[43] = "感谢文案与创意入股成员Rage！"
+        messageList[44] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[45] = "主线上线啦！记得去看看~"
+        messageList[46] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[47] = "感谢底层代码员Array和72P！"
+        messageList[48] = "感谢文案与创意入股成员Rage！"
+        messageList[49] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[50] = "主线上线啦！记得去看看~"
+        messageList[51] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[52] = "感谢底层代码员Array和72P！"
+        messageList[53] = "感谢文案与创意入股成员Rage！"
+        messageList[54] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[55] = "主线上线啦！记得去看看~"
+        messageList[56] = "咕咕~浮梦之屿内部人员都是大鸽子~"
+        messageList[57] = "感谢底层代码员Array和72P！"
+        messageList[58] = "感谢文案与创意入股成员Rage！"
+        messageList[59] = "感谢技术参与与代码员麦克斯韦！"
+        messageList[60] = "守卫者灯塔那束光————那是无上的辉光。"
+        messageList[61] = "为什么要醒来？浮梦之屿，这片乐土，空气里都充斥着令人迷醉的气味……他们会被现实的规则束缚，但浮梦之屿不会……既然如此，为什么还要醒来？就当做了永远也无法醒来的美梦……"
+        messageList[62] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"
+        const selection = Math.floor(Math.random() * messageList.length) //随机数
+        deliverMessage("936", messageList[selection])
+
         //呜哇，谢谢小唐呜呜呜
         $("#logout").click(function () {
             Cookies.remove("objectId")
