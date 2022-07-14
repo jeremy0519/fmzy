@@ -16,6 +16,7 @@
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <script src="js/global.js"></script>
+    <script src="js/chat.js"></script>
     <script>
         if (Cookies.get("objectId") == undefined) {
             window.location.href = "/signin.html"
@@ -23,7 +24,6 @@
     </script>
 </head>
 
-<body class="text-center">
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -54,10 +54,13 @@
             </div>
         </div>
     </nav>
+    <body class="text-center">
+        <div class="container">
+    <div id="liveAlertPlaceholder"></div>
     <h4>这里是反馈bug和说936的地方</h4>
     <div id="vcomments"></div>
-    <script src="js/chat.js"></script>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+</div>
     <!--toast-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" data-bs-delay="5000" aria-live="assertive" aria-atomic="true">

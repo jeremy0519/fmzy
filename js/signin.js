@@ -4,9 +4,7 @@ $(document).ready(function () {
     const classData = Parse.Object.extend("fmzy")
     const alertPlaceholder = $('#liveAlertPlaceholder')
     function alertError(message) {
-        if (document.getElementById("closebtn")) {
-            $("#closebtn").trigger("click")
-        }
+        alertPlaceholder.empty()
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
             `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
@@ -16,6 +14,7 @@ $(document).ready(function () {
             '</div>'
         ].join('')
         alertPlaceholder.append(wrapper)
+        window.location.href="#"
     }
 
     async function tryLogin(usrnme, pswd) {
