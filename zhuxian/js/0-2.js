@@ -3,24 +3,8 @@ $(document).ready(function () {
     Parse.serverURL = 'http://43.142.126.163:1337/parse'
     const classData = Parse.Object.extend("fmzy")
     const alertPlaceholder = $('#liveAlertPlaceholder')
-    function alerterror(message) {
-        if (document.getElementById("closebtn")) {
-            $("#closebtn").trigger("click")
-        }
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML = [
-            `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
-            `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`,
-            `   <div>${message}</div>`,
-            '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-        ].join('')
-        alertPlaceholder.append(wrapper)
-    }
     function alertError(message) {
-        if (document.getElementById("closebtn")) {
-            $("#closebtn").trigger("click")
-        }
+        alertPlaceholder.empty()
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
             `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
@@ -31,20 +15,6 @@ $(document).ready(function () {
         ].join('')
         alertPlaceholder.append(wrapper)
         window.location.href = "#"
-    }
-    function alertSuccess(message) {
-        if (document.getElementById("closebtn")) {
-            $("#closebtn").trigger("click")
-        }
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML = [
-            `<div class="alert fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
-            `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`,
-            `   <div>${message}</div>`,
-            '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-        ].join('')
-        alertPlaceholder.append(wrapper)
     }
     function sleep(time) {
         return new Promise((resolve) => setTimeout(resolve, time))
@@ -65,7 +35,7 @@ $(document).ready(function () {
             window.local_dunwu = xxx.get("dunwu")
             step02()
         }, (error) => {
-            alerterror(error.message + "（你可以点击注销并重新登录）")
+            alertError(error.message + "（你可以点击注销并重新登录）")
         })
     }
 
@@ -96,6 +66,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-primary text-break text-start")
             $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
             const element = document.getElementById("zx" + j)
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
@@ -112,6 +83,7 @@ $(document).ready(function () {
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
+        window.location.href="#form"
         step05()
     }
     function step05() {
@@ -133,6 +105,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-danger text-break text-start")
             $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
             const element = document.getElementById("zx" + j)
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
@@ -162,6 +135,7 @@ $(document).ready(function () {
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
+        window.location.href="#form"
         step08()
     }
     function step08() {
@@ -228,6 +202,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-danger text-break text-start")
             $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
             const element = document.getElementById("zx" + j)
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
@@ -245,6 +220,7 @@ $(document).ready(function () {
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
+        window.location.href="#form"
         step12()
     }
     function step12() {
@@ -257,8 +233,12 @@ $(document).ready(function () {
             zx[0]="企冬背着唐血鸿，思考着接下来去哪里。实在是由于时间紧迫，他决定带小唐去医务室。"
 	        zx[1]="从班级到医务室需要跨越两个大层，企冬一直紧紧抓着唐的手。"
 	        zx[2]="不知道为什么，他在进入他人噩梦的时间基本处于净化状态，什么也感觉不到，但是却会保留他进入前的衣着，思想等等。"
-	        if(window.local_Tanghaogan >= 6){ zx[3]="他虽然感受不到毒气带来的负面效果，但是之前做梦的确有过这一感觉——这让他更为心疼小唐，在肩上承受如此剧痛却连冷气也不吸一口。"}
-	        else zx[3]="他虽然感受不到毒气带来的负面效果，但是之前做梦的确有过这一感觉——也难为小唐这么走一路。"
+	        if(window.local_Tanghaogan >= 6){
+                zx[3]="他虽然感受不到毒气带来的负面效果，但是之前做梦的确有过这一感觉——这让他更为心疼小唐，在肩上承受如此剧痛却连冷气也不吸一口。"
+            }
+	        else{
+                zx[3]="他虽然感受不到毒气带来的负面效果，但是之前做梦的确有过这一感觉——也难为小唐这么走一路。"
+            }
 	        zx[4]="走进医务室企冬就知道自己没有走错——这里没有白雾，虽然也没有人，但是至少可以休息一会。他把小唐放在椅子上，开始仔细检查他的全身。"
 	        zx[5]="身体没问题，在医务室居然有缓慢的精神回复效果——正当企冬探唐的鼻息时，唐血鸿的眼睛悠悠睁开，喉咙里逸出几个虚弱的字：“这是哪里……”"
             if(window.local_daoju[1] == 1){
@@ -302,6 +282,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-danger text-break text-start")
             $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
             const element = document.getElementById("zx" + j)
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
@@ -319,6 +300,7 @@ $(document).ready(function () {
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
+        window.location.href="#form"
         step15()
     }
     function step15() {
@@ -358,6 +340,7 @@ $(document).ready(function () {
             ele.id = "zx" + j
             ele.setAttribute("class", "mt-0 mb-0 text-primary text-break text-start")
             $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
             const element = document.getElementById("zx" + j)
             for (var i = 0; i <= list[j].length; i++) {
                 element.innerHTML = list[j].substr(0, i)
@@ -375,6 +358,7 @@ $(document).ready(function () {
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
+        window.location.href="#form"
         step18()
     }
     function step18() {

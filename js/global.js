@@ -144,6 +144,8 @@ $(document).ready(function () {
         messageList[91] = "为什么要醒来？浮梦之屿，这片乐土，空气里都充斥着令人迷醉的气味……他们会被现实的规则束缚，但浮梦之屿不会……既然如此，为什么还要醒来？就当做了永远也无法醒来的美梦……"
         messageList[92] = "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。"
         messageList[93] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"
+        messageList[94] = "936"
+        messageList[95] = "暑假作业做完了吗？：D"
         const selection = Math.floor(Math.random() * messageList.length) //随机数
         deliverMessage("936", messageList[selection])
 
