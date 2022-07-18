@@ -25,6 +25,7 @@ $(document).ready(function () {
             serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com"
         })
         $("div.vheader.item3").remove()
+        $("div.vpower.txt-right").remove()
     }
 
 

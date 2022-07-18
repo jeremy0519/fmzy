@@ -66,7 +66,7 @@ $(document).ready(function () {
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
         query.get(objid).then((user) => {
-            user.save().then((yyy) => {
+            user.save().then(() => {
                 user.set("Pagehakhaogan", 0)
                 user.set("Tanghaogan", 0)
                 user.set("Binxiahaogan", 0)
@@ -76,15 +76,17 @@ $(document).ready(function () {
                 user.set("nextPage", "0-1")
                 user.set("choices", [])
                 user.set("daoju", [])
-                return user.save()
+                return user.save().then(() => {
+                    if (document.getElementById("close1")) {
+                        $("#close1").trigger("click")
+                    }
+                    alertSuccess("成功初始化进度！")
+                })
             })
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
-        if (document.getElementById("close1")) {
-            $("#close1").trigger("click")
-        }
-        alertSuccess("成功初始化进度！")
+
     })
 
 
