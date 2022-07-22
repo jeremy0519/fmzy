@@ -16,7 +16,6 @@ $(document).ready(function () {
         alertPlaceholder.append(wrapper)
         window.location.href="#"
     }
-
     function alertSuccess(message) {
         alertPlaceholder.empty()
         const wrapper = document.createElement('div')

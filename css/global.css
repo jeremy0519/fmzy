@@ -1,5 +1,7 @@
 body {
     background-image: url("http://43.142.126.163/ico/background.ico");
-    background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+.v[data-class=v] .vwrap {
+    border: 1px solid #b2ebf2;
 }

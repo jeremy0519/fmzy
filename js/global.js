@@ -36,11 +36,10 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         query.get(objid).then((xxx) => {
             const yyy = xxx.get("username")
-            $("#navbarDarkDropdownMenuLink").text("您已登录：" + yyy)
+            $("#navbarDarkDropdownMenuLink").text(yyy)
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
-
         // toast
         function deliverMessage(sender, content) {
             const toast = new bootstrap.Toast(document.getElementById('liveToast'))
@@ -48,6 +47,10 @@ $(document).ready(function () {
             $("div.toast-body").text(content)
             toast.show()
         }
+        const senderList = new Array()
+        senderList[1] = "936"
+        senderList[2] = "异梦"
+        senderList[3] = "Array"
 
         const messageList = new Array()
         messageList[0] = "主线上线啦！记得去看看~"
@@ -166,8 +169,9 @@ $(document).ready(function () {
         messageList[113] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"
         messageList[114] = "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑"
         messageList[115] = "暑假作业做完了吗？：D"
-        const selection = Math.floor(Math.random() * messageList.length) //随机数
-        deliverMessage("936", messageList[selection])
+        const selection1 = Math.floor(Math.random() * senderList.length) //随机数
+        const selection2 = Math.floor(Math.random() * messageList.length) //随机数
+        deliverMessage(senderList[selection1], messageList[selection2])
 
         //呜哇，谢谢小唐呜呜呜
         $("#logout").click(function () {
