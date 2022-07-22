@@ -1,23 +1,5 @@
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
+body {
+    background-image: url("http://43.142.126.163/ico/background.ico");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-
-.nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1 rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-
