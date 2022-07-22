@@ -5,3 +5,6 @@ body {
 .v[data-class=v] .vwrap {
     border: 1px solid #b2ebf2;
 }
+nav.navbar {
+    background-color: var(--bs-indigo);
+}
