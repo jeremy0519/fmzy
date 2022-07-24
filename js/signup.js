@@ -48,6 +48,7 @@ $(document).ready(function () {
                 user.set("nextPage", "0-1")
                 user.set("choices", [])
                 user.set("daoju",[])
+                user.set("dunwu",0)
                 user.save().then((user) => {
                     alertSuccess("注册成功，3秒后跳转首页")
                     Cookies.set("objectId", user.id, { expires: 1 })

@@ -75,6 +75,7 @@ $(document).ready(function () {
                 user.set("nextPage", "0-1")
                 user.set("choices", [])
                 user.set("daoju", [])
+                user.set("dunwu", 0)
                 return user.save().then(() => {
                     if (document.getElementById("close1")) {
                         $("#close1").trigger("click")
@@ -87,6 +88,5 @@ $(document).ready(function () {
         })
 
     })
-
 
 })

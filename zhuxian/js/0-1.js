@@ -32,7 +32,7 @@ $(document).ready(function () {
             window.local_Yimenghaogan = xxx.get("Yimenghaogan")
             window.local_choices = xxx.get("choices")
             window.local_daoju = xxx.get("daoju")
-            window.local_dunwu = 0
+            window.local_dunwu = xxx.get("dunwu")
             step02()
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
