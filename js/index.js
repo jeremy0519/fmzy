@@ -14,7 +14,7 @@ $(document).ready(function () {
             '</div>'
         ].join('')
         alertPlaceholder.append(wrapper)
-        window.location.href="#"
+        window.location.href = "#"
     }
     function alertSuccess(message) {
         alertPlaceholder.empty()
@@ -27,7 +27,7 @@ $(document).ready(function () {
             '</div>'
         ].join('')
         alertPlaceholder.append(wrapper)
-        window.location.href="#"
+        window.location.href = "#"
     }
 
     function updateWelcomeMessage() {
@@ -49,6 +49,20 @@ $(document).ready(function () {
     }
 
     updateWelcomeMessage()
+
+    // check whether add button
+    const objid = Cookies.get("objectId")
+    const query = new Parse.Query(classData)
+    query.get(objid).then((xxx) => {
+        if (xxx.get("progress") >= 3){
+            //add button
+            var buton = document.createElement("div")
+            buton.innerHTML = `<button type="button" id="mixin" class="btn btn-warning">密辛</button>`
+            $("div.modal-footer").append(buton)
+        }
+    }, (error) => {
+        alertError(error.message + "（你可以点击注销并重新登录）")
+    })
 
     $("#continue").click(function () {
         const objid = Cookies.get("objectId")
@@ -89,4 +103,15 @@ $(document).ready(function () {
 
     })
 
+    $("#mixin").click(function () {
+        const objid = Cookies.get("objectId")
+        const query = new Parse.Query(classData)
+        query.get(objid).then((xxx) => {
+            const progress = xxx.get("nextPage")
+            // if(progress){}
+            // window.location.href = "/???.html"
+        }, (error) => {
+            alertError(error.message + "（你可以点击注销并重新登录）")
+        })
+    })
 })

@@ -19,7 +19,11 @@ $(document).ready(function () {
     function sleep(time) {
         return new Promise((resolve) => setTimeout(resolve, time))
     }
-
+    function setPercent(pct){
+        $("div.progress-bar").attr("aria-valuenow",pct)
+        $("div.progress-bar").attr("style","width: "+pct+"%")
+    }
+    setPercent(0)
     async function step01() {
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
@@ -33,6 +37,7 @@ $(document).ready(function () {
             window.local_choices = xxx.get("choices")
             window.local_daoju = xxx.get("daoju")
             window.local_dunwu = xxx.get("dunwu")
+            window.local_progress = xxx.get("progress")
             step02()
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
@@ -120,6 +125,7 @@ $(document).ready(function () {
     }
     function step06(num) {
         window.local_choices.push(num)
+        setPercent(14.2857)
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
@@ -200,6 +206,7 @@ $(document).ready(function () {
     function step09() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(28.5714)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -272,6 +279,7 @@ $(document).ready(function () {
     }
     function step13(num) {
         window.local_choices.push(num)
+        setPercent(42.8571)
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
@@ -333,6 +341,7 @@ $(document).ready(function () {
     function step16() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(57.1428)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -406,6 +415,7 @@ $(document).ready(function () {
     }
     function step20(num) {
         window.local_choices.push(num)
+        setPercent(71.4285)
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
@@ -472,6 +482,7 @@ $(document).ready(function () {
     function step23() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(85.7142)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -490,6 +501,9 @@ $(document).ready(function () {
                 zx[2] = "浮梦之屿……究竟是什么？";
                 window.local_dunwu = window.local_dunwu + 3
             }
+            if(window.local_progress<1){
+                window.local_progress = 1
+            } 
             step24(zx)
         })
     }
@@ -520,6 +534,7 @@ $(document).ready(function () {
     function step25() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(100)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -538,6 +553,7 @@ $(document).ready(function () {
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)
+                    yyy.set("progress", window.local_progress)
                     return yyy.save().then(function () {step27()})
                 })
             }, (error) => {

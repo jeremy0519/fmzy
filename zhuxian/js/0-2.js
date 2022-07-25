@@ -19,7 +19,11 @@ $(document).ready(function () {
     function sleep(time) {
         return new Promise((resolve) => setTimeout(resolve, time))
     }
-
+    function setPercent(pct){
+        $("div.progress-bar").attr("aria-valuenow",pct)
+        $("div.progress-bar").attr("style","width: "+pct+"%")
+    }
+    setPercent(0)
     async function step01() {
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
@@ -33,6 +37,7 @@ $(document).ready(function () {
             window.local_choices = xxx.get("choices")
             window.local_daoju = xxx.get("daoju")
             window.local_dunwu = xxx.get("dunwu")
+            window.local_progress = xxx.get("progress")
             step02()
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
@@ -89,6 +94,7 @@ $(document).ready(function () {
     function step05() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(20)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -157,6 +163,7 @@ $(document).ready(function () {
     }
     function step09(num) {
         window.local_choices.push(num)
+        setPercent(40)
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
@@ -226,6 +233,7 @@ $(document).ready(function () {
     function step12() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(60)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -306,6 +314,7 @@ $(document).ready(function () {
     function step15() {
         $("#form").submit(function (event) {
             event.preventDefault()
+            setPercent(80)
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
@@ -330,6 +339,9 @@ $(document).ready(function () {
 	        zx[7]="鬼使神差的，他打开了和帕普齐斯的对话，然而，接下来的话让他全身上下每一个毛孔透出害怕。"
 	        zx[8]="“今天干得不错啊，不仅干掉了目标，还有效防止了对面报复，加分哦。但是今天可是花了我三颗灵魂烟雾弹哦，整整三颗啊，记得报销。”"
             window.local_Pagehakhaogan = window.local_Pagehakhaogan + 1
+            if(window.local_progress<2){
+                window.local_progress = 2
+            } 
             step16(zx)
         })
     }
@@ -367,6 +379,7 @@ $(document).ready(function () {
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
+            setPercent(100)
             // 上传
             const objid = Cookies.get("objectId")
             const query = new Parse.Query(classData)
@@ -382,6 +395,7 @@ $(document).ready(function () {
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)
+                    yyy.set("progress", window.local_progress)
                     return yyy.save().then(function () {step19()})
                 })
             }, (error) => {

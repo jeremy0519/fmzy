@@ -19,7 +19,11 @@ $(document).ready(function () {
     function sleep(time) {
         return new Promise((resolve) => setTimeout(resolve, time))
     }
-
+    function setPercent(pct){
+        $("div.progress-bar").attr("aria-valuenow",pct)
+        $("div.progress-bar").attr("style","width: "+pct+"%")
+    }
+    setPercent(0)
     async function step01() {
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
@@ -33,6 +37,7 @@ $(document).ready(function () {
             window.local_choices = xxx.get("choices")
             window.local_daoju = xxx.get("daoju")
             window.local_dunwu = xxx.get("dunwu")
+            window.local_progress = xxx.get("progress")
             step02()
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
@@ -309,13 +314,153 @@ $(document).ready(function () {
         form.id = "form"
         $("#formPlaceholder").append(form)
         window.location.href="#form"
+        step13()
     }
-    function step18() {
+    function step13() {
         $("#form").submit(function (event) {
             event.preventDefault()
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
+            var zx = new Array()
+            zx[0]="“我们到了。”唐抬头望，企冬顺着他的视线望过去，“阳光福利院”几个镶金大字悬在头上。“真的才10分钟诶。”企冬推开门。"; 
+	        zx[1]="首先映入眼帘的是整齐的大理石地板，正对门挂着两面绣红锦旗：“诲人不倦。”“品德高尚，热心为民。”那两幅锦旗一尘不染。";
+	        zx[2]="“这里卫生做的还不错啊，”企冬眼睛一亮，“这里显然不是那种三无福利院。”";
+	        zx[3]="话音刚落，他忽然感受到一个巨大的活物掉下来在他眼前乱抓，“艹！这是什么？”";
+	        zx[4]="企冬摸索着终于把那个生物的尾巴抓到，倒着拎起来，居然是只老鼠。";
+	        zx[5]="企冬立刻胃里一阵翻江倒海，把那只灰色的东西丢到地上。那老鼠很快也就钻到墙与地板缝隙中消失不见。";
+	        zx[6]="“虽然我们这里只是二线城市，但是有老鼠未免也太可怕了一点。”唐环顾四周，“看来这个什么牌匾水分不小。”";
+            )
+        })
+    }
+    async function step14(list) {
+        for (var j = 0; j < list.length; j++) {
+            var ele = document.createElement("p")
+            ele.id = "zx" + j
+            ele.setAttribute("class", "mt-0 mb-0 text-danger text-break text-start")
+            $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
+            const element = document.getElementById("zx" + j)
+            for (var i = 0; i <= list[j].length; i++) {
+                element.innerHTML = list[j].substr(0, i)
+                await sleep(10)
+            }
+            await sleep(2000)
+        }
+        step15()
+    }
+    function step15() {
+        const form = document.createElement("form")
+        form.innerHTML = `
+        <form>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label text-danger" for="flexRadioDefault1">……我们要在这里过夜？</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label text-danger" for="flexRadioDefault2">我要回家……</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label text-danger" for="flexRadioDefault3">我们要在这里帮他们打扫卫生吗？忽然不是很想来。</label>
+            </div>
+            <button type="submit" class="btn btn-outline-info mt-2">Continue</button>
+        </form>`
+        form.id = "form"
+        $("#formPlaceholder").append(form)
+        window.location.href="#form"
+        step16()
+    }
+    function step16() {
+        $("#form").submit(function (event) {
+            event.preventDefault()
+            if (document.getElementById("flexRadioDefault1").checked == true) {
+                step17(1)
+            }
+            else if (document.getElementById("flexRadioDefault2").checked == true) {
+                step17(2)
+            }
+            else if (document.getElementById("flexRadioDefault3").checked == true) {
+                step17(3)
+            }
+            else {
+                alertError("请选择一个选项")
+            }
+        })
+    }
+    function step17(num) {
+        window.local_choices.push(num)
+        $("#liveAlertPlaceholder").empty()
+        $("#zhuxianArea").empty()
+        $("#formPlaceholder").empty()
+        if (num == 1) {
+            var zx = new Array()
+            window.local_Tanghaogan = window.local_Tanghaogan + 2
+            zx[0]="“我觉得是的，”唐拍拍企冬的背，“安啦，他们要是敢亏待我们，我们告诉校方不就行了。”";
+			zx[1]="“嗨，我知道，只是我觉得苦了在这里的孩子。”企冬皱起眉，“去签到吧，他们说在哪里签到来着？”";
+            step18(zx)
+        }
+        if (num == 2) {
+            window.local_Tanghaogan = window.local_Tanghaogan + 1
+            var zx = new Array()
+            zx[0]="“实不相瞒，我有相同的愿望。”唐皱眉，“凑合做吧，反正只要一个晚上。”";
+			zx[1]="“苦了我的衣服啊……这里不会有地方洗衣服吧。”企冬是很爱干净的，痛苦面具生动形象了起来。“先去签到吧。";
+            step18(zx)
+        }
+        if (num == 3) {
+            var zx = new Array()
+            zx[0]="“啊……好像是的欸，那里离这里也不是很远。”企冬歪着头想了一会，“小唐好帅！”"
+			zx[1]="“……这又是什么鬼。”唐嘴角不自觉的上扬，“走吧，你说得对，如果晚了真的只能打地铺的。”"
+			zx[2]="“嗨啊，打地铺怕什么。”企冬勾住唐的肩膀，“我之前在你家和你通宵玩王者的时候又不是没有打过地铺。”"
+			zx[3]="……你还有脸说，那次通宵让我第二天物理考试没考上前10。然而唐终究没说出这句话。仔细想想，这家伙在家里，也不是一点好处都没有……"
+			zx[4]="……至少让自己不是很寂寞了。唐笑了笑，轻轻摇了摇头。"
+            if(window.local_Tanghaogan>=9){
+                zx[3]="“这是什么曲子，听着很耳熟。”唐听到企冬在吹口哨，“是一首很温柔的曲子啊。”"
+		        zx[4]="“《萱草花》，是几年前一个电影的插曲，电影名我是忘了。”企冬轻轻答道，顺手摘下一片长青树叶，“是一名母亲送给女儿的。”"
+	    	    zx[5]="遥遥的天之涯~萱草花开放~"
+	        	zx[6]="每一朵~可是我~牵挂的模样~"
+	    	    zx[7]="让它开遍我等着你~回家的路上~"
+	    	    zx[8]="好像我~从不曾~离开你的身旁~"
+	        	zx[9]="他觉得这首曲子也很适合恋人……可是他没有说出来。唐也没有再说话，好像的确想起来了什么。"
+            }
+            window.local_Tanghaogan = window.local_Tanghaogan + 3
+            step18(zx)
+        }
+    }
+    async function step18(list) {
+        for (var j = 0; j < list.length; j++) {
+            var ele = document.createElement("p")
+            ele.id = "zx" + j
+            ele.setAttribute("class", "mt-0 mb-0 text-danger text-break text-start")
+            $("#zhuxianArea").append(ele)
+            window.location.href="#zx"+j
+            const element = document.getElementById("zx" + j)
+            for (var i = 0; i <= list[j].length; i++) {
+                element.innerHTML = list[j].substr(0, i)
+                await sleep(10)
+            }
+            await sleep(2000)
+        }
+        step19()
+    }
+    function step19() {
+        const form = document.createElement("form")
+        form.innerHTML = `<form>
+        <button type="submit" class="btn btn-outline-info mt-2">Continue</button>
+        </form>`
+        form.id = "form"
+        $("#formPlaceholder").append(form)
+        window.location.href="#form"
+        step20()
+    }
+    function step118() {
+        $("#form").submit(function (event) {
+            event.preventDefault()
+            $("#liveAlertPlaceholder").empty()
+            $("#zhuxianArea").empty()
+            $("#formPlaceholder").empty()
+            setPercent(100)
             // 上传
             const objid = Cookies.get("objectId")
             const query = new Parse.Query(classData)
@@ -331,6 +476,7 @@ $(document).ready(function () {
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)
+                    yyy.set("progress", window.local_progress)
                     return yyy.save().then(function () {step19()})
                 })
             }, (error) => {
