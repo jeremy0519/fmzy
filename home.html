@@ -20,6 +20,14 @@
     <script>
         if (Cookies.get('objectId') == undefined) {
             window.location.href = '/signin.html'
+        } else {
+            Parse.initialize("fmzy")
+            Parse.serverURL = 'http://43.142.126.163:1337/parse'
+            const objid = location.href.substring(32)
+            const classData = Parse.Object.extend("fmzy")
+            const query = new Parse.Query(classData)
+            query.get(objid).then(() => { }, () => { window.location.href = '/index.html' })
+
         }
     </script>
 </head>
@@ -52,14 +60,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item"><a href="/" class="nav-link" aria-current="page">首页</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">首页</a></li>
                     <li class="nav-item"><a href="/chat.html" class="nav-link">评论</a></li>
                     <li class="nav-item"><a href="http://43.142.126.163/list.html" class="nav-link">用户列表</a></li>
                     <li class="nav-item dropdown-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-center"
+                        <ul class="dropdown-menu text-center"
                             aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a id="logout" class="dropdown-item" href="#">退出登录</a></li>
                             <li><a id="enterHome" class="dropdown-item" href="#">进入主页</a></li>
@@ -72,13 +80,12 @@
 
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
-        <h5>WIP</h5>
         <div class="row d-flex align-items-center">
             <div class="col">
-                <img src="ico/ico2.ico" width="100" height="100" class="rounded img-fluid">
+                <img id="touxiang" width="100" height="100" class="rounded img-fluid">
             </div>
             <div class="col">
-                <h4>异梦</h4>
+                <h4 id="username"></h4>
                 <p class="mb-0">我是占位的</p>
             </div>
             <div class="col">
@@ -86,20 +93,22 @@
                 <p class="mb-0">成就数量</p>
             </div>
         </div>
-        <div class="row mt-5">
+        <hr>
+        <div class="row">
             <div class="col-8 text-start">
                 <h5>个性签名</h5>
-                <p class="text-break">936936936936936936936936936</p>
+                <p id="signature" class="text-break"></p>
                 <h5>推关进度</h5>
-                <p>0-1</p>
+                <p id="progress"></p>
                 <h5>注册时间</h5>
-                <p>2022-09-36</p>
+                <p id="register"></p>
                 <h5>人物好感</h5>
-                <p>唐血鸿：936</p>
-                <p>唐血鸿：936</p>
-                <p>唐血鸿：936</p>
-                <p>唐血鸿：936</p>
-                <p>唐血鸿：936</p>
+                <p id="tang"></p>
+                <p id="page"></p>
+                <p id="binxia"></p>
+                <p id="dugu"></p>
+                <p id="yimeng"></p>
+                <p id="lian"></p>
                 <h5>花卜</h5>
                 <p>WIP</p>
             </div>

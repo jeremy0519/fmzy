@@ -34,6 +34,12 @@ $(document).ready(function () {
             window.local_Duguqiuyehaogan = xxx.get("Duguqiuyehaogan")
             window.local_Lianhaogan = xxx.get("Lianhaogan")
             window.local_Yimenghaogan = xxx.get("Yimenghaogan")
+            window.local_Pagehakmax = xxx.get("Pagehakmax")
+            window.local_Tangmax = xxx.get("Tangmax")
+            window.local_Binxiamax = xxx.get("Binxiamax")
+            window.local_Dugumax = xxx.get("Dugumax")
+            window.local_Lianmax = xxx.get("Lianmax")
+            window.local_Yimengmax = xxx.get("Yimengmax")
             window.local_choices = xxx.get("choices")
             window.local_daoju = xxx.get("daoju")
             window.local_dunwu = xxx.get("dunwu")
@@ -554,6 +560,24 @@ $(document).ready(function () {
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)
                     yyy.set("progress", window.local_progress)
+                    if(window.local_Tanghaogan>=window.local_Tangmax){
+                        yyy.set("Tangmax", window.local_Tanghaogan)
+                    }
+                    if(window.local_Binxiahaogan>=window.local_Binxiamax){
+                        yyy.set("Binxiamax", window.local_Binxiahaogan)
+                    }
+                    if(window.local_Pagehakhaogan>=window.local_Pagehakmax){
+                        yyy.set("Pagehakmax", window.local_Pagehakhaogan)
+                    }
+                    if(window.local_Lianhaogan>=window.local_Lianmax){
+                        yyy.set("Lianmax", window.local_Lianhaogan)
+                    }
+                    if(window.local_Duguqiuyehaogan>=window.local_Dugumax){
+                        yyy.set("Dugumax", window.local_Duguqiuyehaogan)
+                    }
+                    if(window.local_Yimenghaogan>=window.local_Yimengmax){
+                        yyy.set("Yimengmax", window.local_Yimenghaogan)
+                    }
                     return yyy.save().then(function () {step27()})
                 })
             }, (error) => {
@@ -569,16 +593,19 @@ $(document).ready(function () {
         ele.setAttribute("class", "text-center")
         ele.innerHTML = "0-1 Mission Accomplished."
         $("#zhuxianArea").append(ele)
+        /*
         const butttton = document.createElement("btn")
         butttton.id = "queryhaogan"
         butttton.setAttribute("class", "btn btn-outline-info")
         butttton.innerHTML = "查询好感"
         $("#zhuxianArea").append(butttton)
+        */
         const buttton = document.createElement("btn")
         buttton.id = "redirect"
         buttton.setAttribute("class", "btn btn-outline-info")
         buttton.innerHTML = "前往0-2"
         $("#zhuxianArea").append(buttton)
+        /*
         $("#queryhaogan").click(function () {
             alert(
                 "pagehak好感：" + window.local_Pagehakhaogan +
@@ -590,6 +617,7 @@ $(document).ready(function () {
                 " 选项：" + window.local_choices +
                 " 道具：" + window.local_daoju)
         })
+        */
         $("#redirect").click(function () {
             window.location.href = "http://43.142.126.163/zhuxian/0-2.html"
         })
