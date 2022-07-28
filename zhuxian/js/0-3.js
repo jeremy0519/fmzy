@@ -94,7 +94,7 @@ $(document).ready(function () {
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                <label class="form-check-label text-danger" for="flexRadioDefault3">（隐藏选项）3，啊……是我傻了，小唐好帅！</label>
+                <label class="form-check-label text-danger" for="flexRadioDefault3">（隐藏选项）啊……是我傻了，小唐好帅！</label>
             </div>
             <button type="submit" class="btn btn-outline-info mt-2">Continue</button>
         </form>`
@@ -125,18 +125,32 @@ $(document).ready(function () {
     function step06() {
         $("#form").submit(function (event) {
             event.preventDefault()
-            if (document.getElementById("flexRadioDefault1").checked == true) {
-                step07(1)
+            if(window.local_Tanghaogan>=10){
+                if (document.getElementById("flexRadioDefault1").checked == true) {
+                    step07(1)
+                }
+                else if (document.getElementById("flexRadioDefault2").checked == true) {
+                    step07(2)
+                }
+                else if (document.getElementById("flexRadioDefault3").checked == true) {
+                    step07(3)
+                }
+                else {
+                    alertError("请选择一个选项")
+                }
             }
-            else if (document.getElementById("flexRadioDefault2").checked == true) {
-                step07(2)
+            else{
+                if (document.getElementById("flexRadioDefault1").checked == true) {
+                    step07(1)
+                }
+                else if (document.getElementById("flexRadioDefault2").checked == true) {
+                    step07(2)
+                }
+                else {
+                    alertError("请选择一个选项")
+                }
             }
-            else if (document.getElementById("flexRadioDefault3").checked == true) {
-                step07(3)
-            }
-            else {
-                alertError("请选择一个选项")
-            }
+            
         })
     }
     function step07(num) {
@@ -460,7 +474,7 @@ $(document).ready(function () {
         window.location.href="#form"
         step20()
     }
-    function step118() {
+    function step20() {
         $("#form").submit(function (event) {
             event.preventDefault()
             $("#liveAlertPlaceholder").empty()
@@ -478,7 +492,7 @@ $(document).ready(function () {
                     yyy.set("Duguqiuyehaogan", window.local_Duguqiuyehaogan)
                     yyy.set("Lianhaogan", window.local_Lianhaogan)
                     yyy.set("Yimenghaogan", window.local_Yimenghaogan)
-                    yyy.set("nextPage", "0-2")
+                    yyy.set("nextPage", "0-4")
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)
@@ -501,7 +515,7 @@ $(document).ready(function () {
                     if(window.local_Yimenghaogan>=window.local_Yimengmax){
                         yyy.set("Yimengmax", window.local_Yimenghaogan)
                     }
-                    return yyy.save().then(function () {step19()})
+                    return yyy.save().then(function () {step21()})
                 })
             }, (error) => {
                 alertError(error.message + "（你可以点击注销并重新登录）")
@@ -510,7 +524,7 @@ $(document).ready(function () {
 
     }
 
-    function step19() {
+    function step21() {
         // 展示最终页面
         const ele = document.createElement("h5")
         ele.setAttribute("class", "text-center")
@@ -542,7 +556,7 @@ $(document).ready(function () {
         })
         */
         $("#redirect").click(function () {
-            window.location.href = "http://43.142.126.163/zhuxian/0-3.html"
+            window.location.href = "http://43.142.126.163/zhuxian/0-4.html"
         })
     }
     step01()

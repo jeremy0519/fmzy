@@ -397,7 +397,7 @@ $(document).ready(function () {
                     yyy.set("Duguqiuyehaogan", window.local_Duguqiuyehaogan)
                     yyy.set("Lianhaogan", window.local_Lianhaogan)
                     yyy.set("Yimenghaogan", window.local_Yimenghaogan)
-                    yyy.set("nextPage", "0-2")
+                    yyy.set("nextPage", "0-3")
                     yyy.set("choices", window.local_choices)
                     yyy.set("daoju", window.local_daoju)
                     yyy.set("dunwu", window.local_dunwu)

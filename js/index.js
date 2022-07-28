@@ -108,8 +108,10 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         query.get(objid).then((xxx) => {
             const progress = xxx.get("nextPage")
-            // if(progress){}
-            // window.location.href = "/???.html"
+            if(progress){
+                
+            }
+            window.location.href = "secrets.html"
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })

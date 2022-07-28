@@ -26,6 +26,4 @@ $(document).ready(function () {
         })
         $("div.vheader.item3").remove()
     }
-
-
 })
