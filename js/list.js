@@ -33,6 +33,33 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         const results = await query.find()
         $("#count").text("有" + results.length + "位执行者连接到浮梦之屿总部。")
+        for (var i=0;i<results.length;i++){
+            var row = document.createElement("tr")
+            var cell1 = document.createElement("th")
+            cell1.setAttribute("scope","row")
+            cell1.innerHTML = i+1
+            var cell2 = document.createElement("td")
+            var img = document.createElement("img")
+            img.setAttribute("width","30")
+            img.setAttribute("height","30")
+            img.setAttribute("src","http://43.142.126.163/ico/ico"+results[i].get("touxiang")+".ico")
+            img.setAttribute("class","rounded img-fluid")
+            cell2.append(img)
+            var cell3 = document.createElement("td")
+            cell3.innerHTML = results[i].get("username")
+            var cell4 = document.createElement("td")
+            var a = document.createElement("a")
+            a.setAttribute("href","http://43.142.126.163/home.html?"+results[i].id)
+            a.setAttribute("class","nav-link text-primary")
+            a.setAttribute("target","_blank")
+            a.innerHTML = "进入主页"
+            cell4.append(a)
+            row.append(cell1)
+            row.append(cell2)
+            row.append(cell3)
+            row.append(cell4)
+            $("tbody").append(row)
+        }
     }
     count()
 })

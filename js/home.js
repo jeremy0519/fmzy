@@ -1,7 +1,10 @@
+Parse.initialize("fmzy")
+Parse.serverURL = 'http://43.142.126.163:1337/parse'
+const objid = location.href.substring(32)
+const classData = Parse.Object.extend("fmzy")
+const query = new Parse.Query(classData)
+query.get(objid).then(() => { }, () => { window.location.href = '/index.html' })
 $(document).ready(function () {
-    Parse.initialize("fmzy")
-    Parse.serverURL = 'http://43.142.126.163:1337/parse'
-    const classData = Parse.Object.extend("fmzy")
     const alertPlaceholder = $('#liveAlertPlaceholder')
     function alertError(message) {
         alertPlaceholder.empty()
@@ -44,6 +47,7 @@ $(document).ready(function () {
         $("#progress").text("0-" + xxx.get("progress"))
         $("#signature").text(xxx.get("signature"))
         $("#register").text(xxx.createdAt.toLocaleDateString())
+        $("#lastlogin").text(xxx.get("lastLogin").toLocaleDateString())
         $("#page").text("帕普齐斯好感：" + xxx.get("Pagehakhaogan"))
         $("#tang").text("唐血鸿好感：" + xxx.get("Tanghaogan"))
         $("#binxia").text("彬夏好感：" + xxx.get("Binxiahaogan"))

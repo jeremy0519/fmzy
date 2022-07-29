@@ -1,10 +1,13 @@
 body {
     background-image: url("http://43.142.126.163/ico/background.ico");
-    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 .v[data-class=v] .vwrap {
     border: 1px solid #b2ebf2;
 }
 nav.navbar {
-    background-color: chocolate;
+    background-color: slateblue;
 }

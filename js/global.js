@@ -36,7 +36,12 @@ $(document).ready(function () {
         const query = new Parse.Query(classData)
         query.get(objid).then((xxx) => {
             const yyy = xxx.get("username")
-            $("#navbarDarkDropdownMenuLink").text("Signed in as: "+yyy)
+            $("#navbarDarkDropdownMenuLink").text("Signed in as: " + yyy)
+            xxx.save().then(() => {
+                var date = new Date()
+                xxx.set("lastLogin", date)
+                return xxx.save()
+            })
         }, (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         })
@@ -47,6 +52,8 @@ $(document).ready(function () {
             $("div.toast-body").text(content)
             toast.show()
         }
+
+        //BEGIN MESSAGE
         const senderList = new Array()
         senderList[1] = "？"
         senderList[2] = "异梦"
@@ -172,8 +179,8 @@ $(document).ready(function () {
         const selection1 = Math.floor(Math.random() * senderList.length) //随机数
         const selection2 = Math.floor(Math.random() * messageList.length) //随机数
         deliverMessage(senderList[selection1], messageList[selection2])
+        //END MESSAGE
 
-        //呜哇，谢谢小唐呜呜呜
         $("#logout").click(function () {
             Cookies.remove("objectId")
             alertSuccess("已注销，3秒后跳转登录页")

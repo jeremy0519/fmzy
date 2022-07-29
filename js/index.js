@@ -54,7 +54,7 @@ $(document).ready(function () {
     const objid = Cookies.get("objectId")
     const query = new Parse.Query(classData)
     query.get(objid).then((xxx) => {
-        if (xxx.get("progress") >= 3){
+        if (xxx.get("progress") >= 3) {
             //add button
             var buton = document.createElement("div")
             buton.innerHTML = `<button type="button" id="mixin" class="btn btn-warning">密辛</button>`
@@ -90,6 +90,7 @@ $(document).ready(function () {
                 user.set("choices", [])
                 user.set("daoju", [])
                 user.set("dunwu", 0)
+                user.set("progress", 0)
                 return user.save().then(() => {
                     if (document.getElementById("close1")) {
                         $("#close1").trigger("click")
@@ -103,17 +104,20 @@ $(document).ready(function () {
 
     })
 
-    $("#mixin").click(function () {
-        const objid = Cookies.get("objectId")
-        const query = new Parse.Query(classData)
-        query.get(objid).then((xxx) => {
-            const progress = xxx.get("nextPage")
-            if(progress){
-                
-            }
-            window.location.href = "secrets.html"
-        }, (error) => {
-            alertError(error.message + "（你可以点击注销并重新登录）")
+    if ($("#mixin")) {
+        $("#mixin").click(function () {
+            const objid = Cookies.get("objectId")
+            const query = new Parse.Query(classData)
+            query.get(objid).then((xxx) => {
+                const progress = xxx.get("nextPage")
+                if (progress) {
+
+                }
+                window.location.href = "secrets.html"
+            }, (error) => {
+                alertError(error.message + "（你可以点击注销并重新登录）")
+            })
         })
-    })
+    }
+
 })

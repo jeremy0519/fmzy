@@ -11,14 +11,12 @@
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
-
-
     <!-- Custom -->
     <link href="logo.ico" rel="icon">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
-    <script src="js/global.js"></script>
-    <script src="js/list.js"></script>
+    <script defer src="js/global.js"></script>
+    <script defer src="js/list.js"></script>
     <script>
         if (Cookies.get('objectId') == undefined) {
             window.location.href = '/signin.html'
@@ -56,13 +54,13 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item"><a href="/" class="nav-link">首页</a></li>
                     <li class="nav-item"><a href="/chat.html" class="nav-link">评论</a></li>
-                    <li class="nav-item"><a href="http://43.142.126.163/list.html" class="nav-link active" aria-current="page">用户列表</a></li>
+                    <li class="nav-item"><a href="http://43.142.126.163/list.html" class="nav-link active"
+                            aria-current="page">用户列表</a></li>
                     <li class="nav-item dropdown-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
-                        <ul class="dropdown-menu text-center"
-                            aria-labelledby="navbarDarkDropdownMenuLink">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a id="logout" class="dropdown-item" href="#">退出登录</a></li>
                             <li><a id="enterHome" class="dropdown-item" href="#">进入主页</a></li>
                         </ul>
@@ -75,7 +73,17 @@
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
         <h4 id="count"></h4>
-        <table id="table" class="table table-success table-striped"></table>
+        <table class="table table-light table-hover table-striped">
+            <thead class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">头像</th>
+                <th scope="col">昵称</th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
     </div>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </div>
