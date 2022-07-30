@@ -1,53 +1,58 @@
 $(document).ready(function () {
     Parse.initialize("fmzy")
-    Parse.serverURL = 'http://43.142.126.163:1337/parse'
+    Parse.serverURL = "http://43.142.126.163:1337/parse"
     const classData = Parse.Object.extend("fmzy")
-    const alertPlaceholder = $('#liveAlertPlaceholder')
+    const alertPlaceholder = $("#liveAlertPlaceholder")
     function alertError(message) {
         alertPlaceholder.empty()
-        const wrapper = document.createElement('div')
+        const wrapper = document.createElement("div")
         wrapper.innerHTML = [
             `<div class="alert fade show alert-danger alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-        ].join('')
+            "</div>",
+        ].join("")
         alertPlaceholder.append(wrapper)
         window.location.href = "#"
     }
 
     function alertSuccess(message) {
         alertPlaceholder.empty()
-        const wrapper = document.createElement('div')
+        const wrapper = document.createElement("div")
         wrapper.innerHTML = [
             `<div class="alert fade show alert-success alert-dismissible d-flex align-items-center" role="alert">`,
             `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`,
             `   <div>${message}</div>`,
             '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-        ].join('')
+            "</div>",
+        ].join("")
         alertPlaceholder.append(wrapper)
         window.location.href = "#"
     }
 
-    if (Cookies.get('objectId') != undefined) {
+    if (Cookies.get("objectId") != undefined) {
         const objid = Cookies.get("objectId")
         const query = new Parse.Query(classData)
-        query.get(objid).then((xxx) => {
-            const yyy = xxx.get("username")
-            $("#navbarDarkDropdownMenuLink").text("Signed in as: " + yyy)
-            xxx.save().then(() => {
-                var date = new Date()
-                xxx.set("lastLogin", date)
-                return xxx.save()
-            })
-        }, (error) => {
-            alertError(error.message + "（你可以点击注销并重新登录）")
-        })
+        query.get(objid).then(
+            (xxx) => {
+                const yyy = xxx.get("username")
+                $("#navbarDarkDropdownMenuLink").text("Signed in as: " + yyy)
+                xxx.save().then(() => {
+                    var date = new Date()
+                    xxx.set("lastLogin", date)
+                    return xxx.save()
+                })
+            },
+            (error) => {
+                alertError(error.message + "（你可以点击注销并重新登录）")
+            }
+        )
         // toast
         function deliverMessage(sender, content) {
-            const toast = new bootstrap.Toast(document.getElementById('liveToast'))
+            const toast = new bootstrap.Toast(
+                document.getElementById("liveToast")
+            )
             $("strong.me-auto").text(sender)
             $("div.toast-body").text(content)
             toast.show()
@@ -171,10 +176,13 @@ $(document).ready(function () {
         messageList[108] = "感谢文案与创意入股成员Rage！"
         messageList[109] = "感谢技术参与与代码员麦克斯韦！"
         messageList[110] = "守卫者灯塔那束光————那是无上的辉光。"
-        messageList[111] = "为什么要醒来？浮梦之屿，这片乐土，空气里都充斥着令人迷醉的气味……他们会被现实的规则束缚，但浮梦之屿不会……既然如此，为什么还要醒来？就当做了永远也无法醒来的美梦……"
-        messageList[112] = "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。"
+        messageList[111] =
+            "为什么要醒来？浮梦之屿，这片乐土，空气里都充斥着令人迷醉的气味……他们会被现实的规则束缚，但浮梦之屿不会……既然如此，为什么还要醒来？就当做了永远也无法醒来的美梦……"
+        messageList[112] =
+            "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。"
         messageList[113] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"
-        messageList[114] = "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑"
+        messageList[114] =
+            "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑"
         messageList[115] = "暑假作业做完了吗？：D"
         const selection1 = Math.floor(Math.random() * senderList.length) //随机数
         const selection2 = Math.floor(Math.random() * messageList.length) //随机数
@@ -184,11 +192,12 @@ $(document).ready(function () {
         $("#logout").click(function () {
             Cookies.remove("objectId")
             alertSuccess("已注销，3秒后跳转登录页")
-            setTimeout(function () { window.location.href = "/signin.html" }, 3000)
+            setTimeout(function () {
+                window.location.href = "/signin.html"
+            }, 3000)
         })
         $("#enterHome").click(function () {
             window.location.href = "/home.html?" + Cookies.get("objectId")
         })
     }
-
 })
