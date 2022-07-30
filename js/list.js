@@ -43,7 +43,7 @@ $(document).ready(function () {
             img.setAttribute("width","30")
             img.setAttribute("height","30")
             img.setAttribute("src","http://43.142.126.163/ico/ico"+results[i].get("touxiang")+".ico")
-            img.setAttribute("class","rounded img-fluid")
+            img.setAttribute("class","rounded-circle img-fluid")
             cell2.append(img)
             var cell3 = document.createElement("td")
             cell3.innerHTML = results[i].get("username")
