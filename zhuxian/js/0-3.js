@@ -169,6 +169,7 @@ $(document).ready(function () {
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
+        setPercent(20)
         if (num == 1) {
             var zx = new Array()
             zx[0] = "“怎么可能啊，我功课做足的。”綮冬摇头，“小唐你在逗我吧。”"
@@ -273,6 +274,7 @@ $(document).ready(function () {
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
+            setPercent(40)
             var zx = new Array()
             zx[0] =
                 "无话间，两人已经到了地铁站。买完票坐上地铁，綮冬看了眼表，还不到5分钟。"
@@ -406,6 +408,7 @@ $(document).ready(function () {
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
+            setPercent(60)
             var zx = new Array()
             zx[0] =
                 "“我们到了。”唐抬头望，綮冬顺着他的视线望过去，“阳光福利院”几个镶金大字悬在头上。“真的才10分钟诶。”綮冬推开门。"
@@ -489,6 +492,7 @@ $(document).ready(function () {
         $("#liveAlertPlaceholder").empty()
         $("#zhuxianArea").empty()
         $("#formPlaceholder").empty()
+        setPercent(80)
         if (num == 1) {
             var zx = new Array()
             window.local_Tanghaogan = window.local_Tanghaogan + 2
@@ -565,6 +569,9 @@ $(document).ready(function () {
             zx[10] =
                 "“因为只有你们两个啊。”院长合上志愿者本子，“该不会我认错了你们两个分别是谁吧？那对不起，我老眼昏花了。”"
             zx[11] = "綮冬：……他忽然感到大事不妙。"
+            if (window.local_progress < 3) {
+                window.local_progress = 3
+            }
             step18(zx)
         }
     }
