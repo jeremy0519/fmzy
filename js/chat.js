@@ -8,18 +8,18 @@ $(document).ready(function () {
     query.get(objid).then(
         (xxx) => {
             const yyy = xxx.get("username")
-            lock(yyy, Cookies.get("objectId"))
+            lock(yyy, Cookies.get("objectId"), xxx.get("touxiang"))
         },
         (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）")
         }
     )
-    function lock(a, b) {
+    function lock(a, b, c) {
         localStorage.removeItem("_v_Cache_Meta")
         var data = {
             nick: a,
             link: "http://43.142.126.163/home.html?" + b,
-            mail: "",
+            mail: "http://43.142.126.163/ico/ico" + c + ".ico"
         }
         data = JSON.stringify(data)
         localStorage.setItem("_v_Cache_Meta", data)

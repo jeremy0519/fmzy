@@ -20,9 +20,6 @@
     <script>
         if (Cookies.get('objectId') == undefined) {
             window.location.href = '/signin.html'
-        } else {
-            
-
         }
     </script>
 </head>
@@ -62,8 +59,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
-                        <ul class="dropdown-menu text-center"
-                            aria-labelledby="navbarDarkDropdownMenuLink">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a id="logout" class="dropdown-item" href="#">退出登录</a></li>
                             <li><a id="enterHome" class="dropdown-item" href="#">进入主页</a></li>
                         </ul>
@@ -75,6 +71,22 @@
 
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="modalToggle1" aria-hidden="true"
+            aria-labelledby="modalToggleLabel1" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalToggleLabel1">正在执行您的请求，请耐心等待完成</h5>
+                        <div class="clearfix">
+                            <div class="spinner-border text-info float-end" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
         <div class="row d-flex align-items-center">
             <div class="col-4">
                 <img id="touxiang" width="125" height="125" class="rounded-circle img-fluid">
@@ -82,7 +94,7 @@
             <div class="col-8">
                 <div class="row">
                     <div class="col">
-                        <h2 id="username"></h4>
+                        <h3 id="username"></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -101,7 +113,7 @@
         <div class="row">
             <div class="col-8 text-start">
                 <h5>个性签名</h5>
-                <p id="signature" class="text-break"></p>
+                <p class="text-break" id="signature"></p>
                 <h5>推关进度</h5>
                 <p id="progress"></p>
                 <h5>注册时间</h5>

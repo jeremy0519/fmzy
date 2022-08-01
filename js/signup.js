@@ -89,6 +89,8 @@ $(document).ready(function () {
             alertError("请输入用户名")
         } else if (!passwd || passwd == "") {
             alertError("请输入密码")
+        } else if (accountName != accountName.substring(0,30)){
+            alertError("用户名过长")
         } else {
             checkExist(accountName, passwd)
         }
