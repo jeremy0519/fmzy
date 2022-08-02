@@ -1,9 +1,8 @@
 Parse.initialize("fmzy");
 Parse.serverURL = "http://43.142.126.163:1337/parse";
-const objid = location.href.substring(32);
 const classData = Parse.Object.extend("fmzy");
 const query = new Parse.Query(classData);
-query.get(objid).then(
+query.get(location.href.substring(32)).then(
     () => {},
     () => {
         window.location.href = "/index.html";
@@ -54,6 +53,7 @@ $(document).ready(function () {
             "</div>",
         ].join("");
         $(".modal-body").append(e);
+        $(".modal-title").text("Success.")
         $(".clearfix").remove();
     }
     function errorinmodal(text) {
@@ -66,6 +66,7 @@ $(document).ready(function () {
             "</div>",
         ].join("");
         $(".modal-body").append(e);
+        $(".modal-title").text("Error.")
         $(".clearfix").remove();
     }
     // get id
@@ -252,7 +253,7 @@ $(document).ready(function () {
         $("form").submit((Event) => {
             Event.preventDefault();
             const query = new Parse.Query(classData);
-            query.get(objid).then(
+            query.get(window.objectId).then(
                 (user) => {
                     user.save().then(() => {
                         user.set("username", $("#input1").val());
