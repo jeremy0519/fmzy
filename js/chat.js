@@ -14,6 +14,7 @@ $(document).ready(function () {
             alertError(error.message + "（你可以点击注销并重新登录）");
         }
     );
+    
     function lock(a, b, c) {
         localStorage.removeItem("_v_Cache_Meta");
         var data = {
@@ -23,13 +24,17 @@ $(document).ready(function () {
         };
         data = JSON.stringify(data);
         localStorage.setItem("_v_Cache_Meta", data);
-        new Valine({
-            el: "#vcomments",
-            appId: "gDlxWvuMYBkDVYVS4mwEYv9Y-9Nh9j0Va",
-            appKey: "r34nQnYth9ssYEJuXLzTl1DC",
-            placeholder: "说点什么吧，说完之后就不能撤回了哦！",
-            serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com"
+        jinrishici.load(function(result) {
+            const poem = result.data.content + "\n" + '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+          new Valine({
+                el: "#vcomments",
+                appId: "gDlxWvuMYBkDVYVS4mwEYv9Y-9Nh9j0Va",
+                appKey: "r34nQnYth9ssYEJuXLzTl1DC",
+                placeholder: poem,
+                serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com",
+                visitor: true
+            });
+            $("div.vheader.item3").remove();
         });
-        $("div.vheader.item3").remove();
     }
 });

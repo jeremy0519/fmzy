@@ -95,7 +95,6 @@ $(document).ready(function () {
                     user.set("choices", []);
                     user.set("daoju", []);
                     user.set("dunwu", 0);
-                    user.set("progress", 0);
                     return user.save().then(() => {
                         if (document.getElementById("close1")) {
                             $("#close1").trigger("click");
@@ -116,7 +115,7 @@ $(document).ready(function () {
             const query = new Parse.Query(classData);
             query.get(objid).then(
                 (xxx) => {
-                    const progress = xxx.get("nextPage");
+                    const progress = xxx.get("progress");
                     if (progress) {
                     }
                     window.location.href = "secrets.html";

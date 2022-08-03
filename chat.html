@@ -9,6 +9,7 @@
     <script src="https://cdn.staticfile.org/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script defer src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
     <!-- Custom -->
@@ -18,6 +19,8 @@
     <script defer src="js/global.js"></script>
     <script defer src="js/Valine.min.js"></script>
     <script defer src="js/chat.js"></script>
+    <!-- 评论框美化 -->
+    <link defer href="css/chat.css" rel="stylesheet">
     <script>
         if (Cookies.get("objectId") == undefined) {
             window.location.href = "/signin.html"
@@ -67,7 +70,13 @@
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
         <h4>这里是发布更新和交流的地方</h4>
-        <h6>Tip: 点击蓝色昵称可以查看Ta的个人主页哦</h6>
+        <h6>Tip: 图片拖入输入框可以插入图片哦（或者复制到剪贴板后到输入框黏贴）</h6>
+        <h6>Tip: 点击昵称可以查看Ta的个人主页哦</h6>
+        <h6>Tip: 评论发送后无法撤回哦</h6>
+        <span id="/chat.html" class="leancloud_visitors mb-2" data-flag-title="ValineComment" style="display: block;">
+            <em class="post-meta-item-text">访问量：</em>
+            <i class="leancloud-visitors-count"></i>
+        </span>
         <div id="vcomments"></div>
         <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </div>
