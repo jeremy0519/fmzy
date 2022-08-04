@@ -62,7 +62,7 @@ $(document).ready(function () {
                     user.save().then(
                         (user) => {
                             alertSuccess("注册成功，3秒后跳转首页");
-                            Cookies.set("objectId", user.id, { expires: 1 });
+                            Cookies.set("objectId", user.id);
                             setTimeout(function () {
                                 window.location.href = "/";
                             }, 3000);

@@ -2,6 +2,12 @@ Parse.initialize("fmzy");
 Parse.serverURL = "http://43.142.126.163:1337/parse";
 const classData = Parse.Object.extend("fmzy");
 const query = new Parse.Query(classData);
+const { Query, User } = AV;
+AV.init({
+    appId: "gDlxWvuMYBkDVYVS4mwEYv9Y-9Nh9j0Va",
+    appKey: "r34nQnYth9ssYEJuXLzTl1DC",
+    serverURL: "https://gdlxwvum.lc-cn-e1-shared.com",
+});
 query.get(location.href.substring(32)).then(
     () => {},
     () => {
@@ -40,7 +46,7 @@ $(document).ready(function () {
         var d = new Date();
         var e = document.createElement("p");
         e.setAttribute("class", "mb-0 text-break text-start");
-        e.innerHTML = d.toLocaleTimeString() + "：" + text;
+        e.innerHTML = "[" + d.toLocaleTimeString() + "] " + text;
         $(".modal-body").append(e);
     }
     function successinmodal(text) {
@@ -53,7 +59,7 @@ $(document).ready(function () {
             "</div>",
         ].join("");
         $(".modal-body").append(e);
-        $(".modal-title").text("Success.")
+        $(".modal-title").text("Success.");
         $(".clearfix").remove();
     }
     function errorinmodal(text) {
@@ -66,7 +72,7 @@ $(document).ready(function () {
             "</div>",
         ].join("");
         $(".modal-body").append(e);
-        $(".modal-title").text("Error.")
+        $(".modal-title").text("Error.");
         $(".clearfix").remove();
     }
     // get id
@@ -169,6 +175,8 @@ $(document).ready(function () {
         const query = new Parse.Query(classData);
         query.get(window.objectId).then(
             (xxx) => {
+                window.previousTouxiang = xxx.get("touxiang");
+                window.previousUsername = xxx.get("username");
                 $("#inlineRadio" + xxx.get("touxiang")).prop("checked", true);
                 $("#input1").val(xxx.get("username"));
                 $("#input2").val(xxx.get("password"));
@@ -252,44 +260,89 @@ $(document).ready(function () {
         // 表单提交
         $("form").submit((Event) => {
             Event.preventDefault();
-            const query = new Parse.Query(classData);
-            query.get(window.objectId).then(
-                (user) => {
-                    user.save().then(() => {
-                        user.set("username", $("#input1").val());
-                        user.set("password", $("#input2").val());
-                        user.set("signature", $("#input3").val());
-                        if (document.getElementById("inlineRadio1").checked == true) {
-                            user.set("touxiang", 1);
-                        } else if (document.getElementById("inlineRadio2").checked == true) {
-                            user.set("touxiang", 2);
-                        } else if (document.getElementById("inlineRadio3").checked == true) {
-                            user.set("touxiang", 3);
-                        } else if (document.getElementById("inlineRadio4").checked == true) {
-                            user.set("touxiang", 4);
-                        } else if (document.getElementById("inlineRadio5").checked == true) {
-                            user.set("touxiang", 5);
-                        } else if (document.getElementById("inlineRadio6").checked == true) {
-                            user.set("touxiang", 6);
-                        } else if (document.getElementById("inlineRadio7").checked == true) {
-                            user.set("touxiang", 7);
-                        } else if (document.getElementById("inlineRadio8").checked == true) {
-                            user.set("touxiang", 8);
-                        } else if (document.getElementById("inlineRadio9").checked == true) {
-                            user.set("touxiang", 9);
-                        }
-                        return user.save().then(() => {
-                            successinmodal("已更新个人信息，3秒后刷新");
-                            setTimeout(() => {
-                                window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
-                            }, 3000);
+            if ($("#input1").val() != $("#input1").val().substring(0, 30)) {
+                Event.preventDefault();
+                Event.stopPropagation();
+                errorinmodal("用户名过长，3秒后刷新");
+                setTimeout(() => {
+                    window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
+                }, 3000);
+            } else {
+                const query = new Parse.Query(classData);
+                query.get(window.objectId).then(
+                    (user) => {
+                        user.save().then(() => {
+                            user.set("username", $("#input1").val());
+                            window.newUsername = $("#input1").val();
+                            user.set("password", $("#input2").val());
+                            user.set("signature", $("#input3").val());
+                            if (document.getElementById("inlineRadio1").checked == true) {
+                                user.set("touxiang", 1);
+                                window.newTouxiang = 1;
+                            } else if (document.getElementById("inlineRadio2").checked == true) {
+                                user.set("touxiang", 2);
+                                window.newTouxiang = 2;
+                            } else if (document.getElementById("inlineRadio3").checked == true) {
+                                user.set("touxiang", 3);
+                                window.newTouxiang = 3;
+                            } else if (document.getElementById("inlineRadio4").checked == true) {
+                                user.set("touxiang", 4);
+                                window.newTouxiang = 4;
+                            } else if (document.getElementById("inlineRadio5").checked == true) {
+                                user.set("touxiang", 5);
+                                window.newTouxiang = 5;
+                            } else if (document.getElementById("inlineRadio6").checked == true) {
+                                user.set("touxiang", 6);
+                                window.newTouxiang = 6;
+                            } else if (document.getElementById("inlineRadio7").checked == true) {
+                                user.set("touxiang", 7);
+                                window.newTouxiang = 7;
+                            } else if (document.getElementById("inlineRadio8").checked == true) {
+                                user.set("touxiang", 8);
+                                window.newTouxiang = 8;
+                            } else if (document.getElementById("inlineRadio9").checked == true) {
+                                user.set("touxiang", 9);
+                                window.newTouxiang = 9;
+                            }
+                            return user.save().then(() => {
+                                loginmodal("旧头像：ico" + window.previousTouxiang);
+                                loginmodal("新头像：ico" + window.newTouxiang);
+                                loginmodal("旧昵称：" + window.previousUsername);
+                                loginmodal("新昵称：" + window.newUsername);
+                                if (window.previousTouxiang == window.newTouxiang && window.previousUsername == window.newUsername) {
+                                    loginmodal("旧头像与新头像相同，无需更改");
+                                    loginmodal("旧昵称与新昵称相同，无需更改");
+                                } else if (window.previousUsername == window.newUsername && window.previousTouxiang != window.newTouxiang) {
+                                    loginmodal("旧昵称与新昵称相同，无需更改");
+                                    loginmodal("头像需要更改");
+                                    syncTouxiang(window.previousTouxiang, window.newTouxiang)
+                                } else if (window.previousUsername != window.newUsername && window.previousTouxiang == window.newTouxiang) {
+                                    loginmodal("旧头像与新头像相同，无需更改");
+                                    loginmodal("昵称需要更改");
+                                    syncUsername(window.previousUsername, window.newUsername)
+                                } else {
+                                    loginmodal("头像和昵称都需要修改");
+                                    syncTouxiang(window.previousTouxiang, window.newTouxiang)
+                                    syncUsername(window.previousUsername, window.newUsername)
+                                }
+                                function syncTouxiang(prev, next){
+
+                                }
+                                function syncUsername(prev, next){
+
+                                }
+                                successinmodal("已更新个人信息，3秒后刷新");
+                                setTimeout(() => {
+                                    window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
+                                }, 3000);
+                            });
                         });
-                    });
-                },
-                (error) => {
-                    errorinmodal(error.message + "（你可以刷新页面并重试）");
-                }
-            );
+                    },
+                    (error) => {
+                        errorinmodal(error.message + "（你可以刷新页面并重试）");
+                    }
+                );
+            }
         });
     }
 });
