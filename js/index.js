@@ -55,9 +55,67 @@ $(document).ready(function () {
         (xxx) => {
             if (xxx.get("progress") >= 3) {
                 //add button
-                var buton = document.createElement("div");
-                buton.innerHTML = `<button type="button" id="mixin" class="btn btn-warning">密辛</button>`;
-                $("div.modal-footer").append(buton);
+                document.getElementsByClassName("modal-footer")[0].innerHTML = `
+                <button type="button" id="startNew" class="btn btn-secondary">开始新存档</button>
+                <button type="button" id="continue" class="btn btn-primary">继续</button>
+                <button type="button" id="mixin" class="btn btn-warning">密辛</button>`;
+                $("#mixin").click(function () {
+                    const objid = Cookies.get("objectId");
+                    const query = new Parse.Query(classData);
+                    query.get(objid).then(
+                        (xxx) => {
+                            const progress = xxx.get("progress");
+                           if (progress) {}
+                            window.location.href = "secrets.html";
+                        },
+                        (error) => {
+                            alertError(error.message + "（你可以点击注销并重新登录）");
+                        }
+                    );
+                });
+                $("#continue").click(function () {
+                    const objid = Cookies.get("objectId");
+                    const query = new Parse.Query(classData);
+                    query.get(objid).then(
+                        (xxx) => {
+                            const yyy = xxx.get("nextPage");
+                            window.location.href = "/zhuxian/" + yyy + ".html";
+                        },
+                        (error) => {
+                            alertError(error.message + "（你可以点击注销并重新登录）");
+                        }
+                    );
+                });
+            
+                $("#startNew").click(function () {
+                    const objid = Cookies.get("objectId");
+                    const query = new Parse.Query(classData);
+                    query.get(objid).then(
+                        (user) => {
+                            user.save().then(() => {
+                                user.set("Pagehakhaogan", 0);
+                                user.set("Tanghaogan", 0);
+                                user.set("Binxiahaogan", 0);
+                                user.set("Duguqiuyehaogan", 0);
+                                user.set("Lianhaogan", 0);
+                                user.set("Yimenghaogan", 0);
+                                user.set("nextPage", "0-1");
+                                user.set("choices", []);
+                                user.set("daoju", []);
+                                user.set("dunwu", 0);
+                                return user.save().then(() => {
+                                    if (document.getElementById("close1")) {
+                                        $("#close1").trigger("click");
+                                    }
+                                    alertSuccess("成功初始化进度！");
+                                });
+                            });
+                        },
+                        (error) => {
+                            alertError(error.message + "（你可以点击注销并重新登录）");
+                        }
+                    );
+                });
             }
         },
         (error) => {
@@ -108,22 +166,4 @@ $(document).ready(function () {
             }
         );
     });
-
-    if ($("#mixin")) {
-        $("#mixin").click(function () {
-            const objid = Cookies.get("objectId");
-            const query = new Parse.Query(classData);
-            query.get(objid).then(
-                (xxx) => {
-                    const progress = xxx.get("progress");
-                    if (progress) {
-                    }
-                    window.location.href = "secrets.html";
-                },
-                (error) => {
-                    alertError(error.message + "（你可以点击注销并重新登录）");
-                }
-            );
-        });
-    }
-});
+})

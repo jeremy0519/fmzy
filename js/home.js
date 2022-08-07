@@ -2,12 +2,6 @@ Parse.initialize("fmzy");
 Parse.serverURL = "http://43.142.126.163:1337/parse";
 const classData = Parse.Object.extend("fmzy");
 const query = new Parse.Query(classData);
-const { Query, User } = AV;
-AV.init({
-    appId: "gDlxWvuMYBkDVYVS4mwEYv9Y-9Nh9j0Va",
-    appKey: "r34nQnYth9ssYEJuXLzTl1DC",
-    serverURL: "https://gdlxwvum.lc-cn-e1-shared.com",
-});
 query.get(location.href.substring(32)).then(
     () => {},
     () => {
