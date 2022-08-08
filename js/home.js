@@ -8,6 +8,7 @@ query.get(location.href.substring(32)).then(
         window.location.href = "/index.html";
     }
 );
+AV.init({ appId: "gDlxWvuMYBkDVYVS4mwEYv9Y-9Nh9j0Va", appKey: "r34nQnYth9ssYEJuXLzTl1DC", serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com" });
 $(document).ready(function () {
     const alertPlaceholder = $("#liveAlertPlaceholder");
     function alertError(message) {
@@ -75,10 +76,17 @@ $(document).ready(function () {
     const query = new Parse.Query(classData);
     query.get(window.objectId).then(
         (xxx) => {
+            function getProgress(progress) {
+                if (progress == 0) {
+                    return "未开始主线";
+                } else {
+                    return "0-" + progress;
+                }
+            }
             $("#touxiang").attr("src", "ico/ico" + xxx.get("touxiang") + ".ico");
             $("#username").text(xxx.get("username"));
-            $("#progress").text("0-" + xxx.get("progress"));
-            document.getElementById("signature").innerHTML = xxx.get("signature").replace("\n", "<br />");
+            $("#progress").text(getProgress(xxx.get("progress")));
+            document.getElementById("signature").innerHTML = xxx.get("signature").replace(/\n/g, "<br />").replace(/\r\n/g, "<br />");
             $("#register").text(xxx.createdAt.toLocaleDateString());
             if (xxx.get("lastLogin") != undefined) {
                 $("#lastlogin").text(xxx.get("lastLogin").toLocaleDateString());
@@ -306,29 +314,32 @@ $(document).ready(function () {
                                 if (window.previousTouxiang == window.newTouxiang && window.previousUsername == window.newUsername) {
                                     loginmodal("旧头像与新头像相同，无需更改");
                                     loginmodal("旧昵称与新昵称相同，无需更改");
-                                } else if (window.previousUsername == window.newUsername && window.previousTouxiang != window.newTouxiang) {
-                                    loginmodal("旧昵称与新昵称相同，无需更改");
-                                    loginmodal("头像需要更改");
-                                    syncTouxiang(window.previousTouxiang, window.newTouxiang)
-                                } else if (window.previousUsername != window.newUsername && window.previousTouxiang == window.newTouxiang) {
-                                    loginmodal("旧头像与新头像相同，无需更改");
-                                    loginmodal("昵称需要更改");
-                                    syncUsername(window.previousUsername, window.newUsername)
+                                    successinmodal("已更新个人信息，3秒后刷新");
+                                    setTimeout(() => {
+                                        window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
+                                    }, 3000);
                                 } else {
-                                    loginmodal("头像和昵称都需要修改");
-                                    syncTouxiang(window.previousTouxiang, window.newTouxiang)
-                                    syncUsername(window.previousUsername, window.newUsername)
+                                    loginmodal("头像或昵称需要修改");
+                                    sync(window.newTouxiang, window.newUsername);
                                 }
-                                function syncTouxiang(prev, next){
-
+                                function sync(tx, un) {
+                                    loginmodal("开始更新头像");
+                                    loginmodal("正在查询你发送的评论...");
+                                    const query = new AV.Query("Comment");
+                                    query.equalTo("link", "http://43.142.126.163/home.html?" + Cookies.get("objectId"));
+                                    query.limit(1000);
+                                    query
+                                        .find()
+                                        .then((results) => {
+                                            loginmodal("共" + results.length + "条");
+                                        })
+                                        .then(() => {
+                                            successinmodal("已更新个人信息，3秒后刷新");
+                                            setTimeout(() => {
+                                                window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
+                                            }, 3000);
+                                        });
                                 }
-                                function syncUsername(prev, next){
-
-                                }
-                                successinmodal("已更新个人信息，3秒后刷新");
-                                setTimeout(() => {
-                                    window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
-                                }, 3000);
                             });
                         });
                     },
