@@ -404,9 +404,6 @@ $(document).ready(function () {
             zx[8] =
                 "“今天干得不错啊，不仅干掉了目标，还有效防止了对面报复，加分哦。但是今天可是花了我三颗灵魂烟雾弹哦，整整三颗啊，记得报销。”"
             window.local_Pagehakhaogan = window.local_Pagehakhaogan + 1
-            if (window.local_progress < 2) {
-                window.local_progress = 2
-            }
             step16(zx)
         })
     }
@@ -448,6 +445,9 @@ $(document).ready(function () {
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
             setPercent(100)
+            if (window.local_progress < 2) {
+                window.local_progress = 2
+            }
             // 上传
             const objid = Cookies.get("objectId")
             const query = new Parse.Query(classData)

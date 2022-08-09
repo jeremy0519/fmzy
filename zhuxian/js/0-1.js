@@ -576,9 +576,6 @@ $(document).ready(function () {
                 zx[2] = "浮梦之屿……究竟是什么？"
                 window.local_dunwu = window.local_dunwu + 3
             }
-            if (window.local_progress < 1) {
-                window.local_progress = 1
-            }
             step24(zx)
         })
     }
@@ -616,6 +613,9 @@ $(document).ready(function () {
             $("#liveAlertPlaceholder").empty()
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
+            if (window.local_progress < 1) {
+                window.local_progress = 1
+            }
             // 上传
             const objid = Cookies.get("objectId")
             const query = new Parse.Query(classData)

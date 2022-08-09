@@ -53,7 +53,7 @@ $(document).ready(function () {
             a.setAttribute("href", "http://43.142.126.163/home.html?" + results[i].id);
             a.setAttribute("class", "nav-link text-primary");
             a.setAttribute("target", "_blank");
-            a.innerHTML = "进入主页";
+            a.innerHTML = "查看信息录入表";
             cell4.append(a);
             row.append(cell1);
             row.append(cell2);

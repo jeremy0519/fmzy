@@ -569,9 +569,6 @@ $(document).ready(function () {
             zx[10] =
                 "“因为只有你们两个啊。”院长合上志愿者本子，“该不会我认错了你们两个分别是谁吧？那对不起，我老眼昏花了。”"
             zx[11] = "綮冬：……他忽然感到大事不妙。"
-            if (window.local_progress < 3) {
-                window.local_progress = 3
-            }
             step18(zx)
         }
     }
@@ -611,6 +608,9 @@ $(document).ready(function () {
             $("#zhuxianArea").empty()
             $("#formPlaceholder").empty()
             setPercent(100)
+            if (window.local_progress < 3) {
+                window.local_progress = 3
+            }
             // 上传
             const objid = Cookies.get("objectId")
             const query = new Parse.Query(classData)

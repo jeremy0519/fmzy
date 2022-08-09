@@ -241,11 +241,29 @@ $(document).ready(function () {
                         (xxx) => {
                             xxx.destroy().then(
                                 () => {
-                                    Cookies.remove("objectId");
-                                    successinmodal("已删除用户，3秒后跳转登录页");
-                                    setTimeout(() => {
-                                        window.location.href = "http://43.142.126.163/signin.html";
-                                    }, 3000);
+                                    removeComment();
+                                    async function removeComment() {
+                                        loginmodal("开始更新评论头像");
+                                        loginmodal("正在查询你发送的评论...");
+                                        const qy = new AV.Query("Comment");
+                                        qy.equalTo("link", "http://43.142.126.163/home.html?" + Cookies.get("objectId"));
+                                        qy.limit(1000);
+                                        const results = await qy.find();
+                                        loginmodal("共" + results.length + "条");
+                                        for (var i = 0; i < results.length; i++) {
+                                            var rage = results[i];
+                                            rage.unset("link");
+                                            rage.set("mail", "http://43.142.126.163/logo.ico");
+                                            await rage.save();
+                                            var j = i + 1;
+                                            loginmodal("第" + j + "个更新完毕");
+                                        }
+                                        successinmodal("已删除用户，3秒后跳转登录页");
+                                        Cookies.remove("objectId");
+                                        setTimeout(() => {
+                                            window.location.href = "http://43.142.126.163/signin.html";
+                                        }, 3000);
+                                    }
                                 },
                                 (error) => {
                                     errorinmodal(error.message + "（你可以刷新页面并重试）");
@@ -322,23 +340,26 @@ $(document).ready(function () {
                                     loginmodal("头像或昵称需要修改");
                                     sync(window.newTouxiang, window.newUsername);
                                 }
-                                function sync(tx, un) {
-                                    loginmodal("开始更新头像");
+                                async function sync(tx, un) {
+                                    loginmodal("开始更新头像和昵称");
                                     loginmodal("正在查询你发送的评论...");
-                                    const query = new AV.Query("Comment");
-                                    query.equalTo("link", "http://43.142.126.163/home.html?" + Cookies.get("objectId"));
-                                    query.limit(1000);
-                                    query
-                                        .find()
-                                        .then((results) => {
-                                            loginmodal("共" + results.length + "条");
-                                        })
-                                        .then(() => {
-                                            successinmodal("已更新个人信息，3秒后刷新");
-                                            setTimeout(() => {
-                                                window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
-                                            }, 3000);
-                                        });
+                                    const q = new AV.Query("Comment");
+                                    q.equalTo("link", "http://43.142.126.163/home.html?" + Cookies.get("objectId"));
+                                    q.limit(1000);
+                                    const results = await q.find();
+                                    loginmodal("共" + results.length + "条");
+                                    for (var i = 0; i < results.length; i++) {
+                                        var rage = results[i];
+                                        rage.set("nick", un);
+                                        rage.set("mail", "http://43.142.126.163/ico/ico" + tx + ".ico");
+                                        await rage.save();
+                                        var j = i + 1;
+                                        loginmodal("第" + j + "个更新完毕");
+                                    }
+                                    successinmodal("已更新评论头像和昵称，3秒后刷新");
+                                    setTimeout(() => {
+                                        window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
+                                    }, 3000);
                                 }
                             });
                         });
