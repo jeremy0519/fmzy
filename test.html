@@ -16,7 +16,7 @@
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <script defer src="js/global.js"></script>
-    <script defer src="js/secrets.js"></script>
+    <script defer src="js/test.js"></script>
     <script>
         if (Cookies.get('objectId') == undefined) {
             window.location.href = '/signin.html'
@@ -40,7 +40,6 @@
 </svg>
 
 <body class="text-center">
-
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 
         <div class="container-fluid">
@@ -69,10 +68,10 @@
         </div>
     </nav>
 
-
     <div class="container">
-        <div id="liveAlertPlaceholder"></div> 
-        <h4>密辛</h4>
+        <div id="liveAlertPlaceholder"></div>
+        <h4 id="title"></h4>
+        <h6 class="text-muted" id="LevelNow"></h6>
         <a class="btn btn-outline-info" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
             aria-controls="offcanvasExample">
             歌单
@@ -107,68 +106,7 @@
             </div>
         </div>
         <hr>
-        <h5>#镰的日记#</h5>
-        <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-auto" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link" id="v-pills-addicted-tab"
-                        data-bs-target="#v-pills-addicted" type="button" role="tab">Addicted</button>                
-                    <button class="nav-link" id="v-pills-blind-tab"
-                        data-bs-target="#v-pills-blind" type="button" role="tab">Blind</button>
-                    <button class="nav-link" id="v-pills-crush-tab"
-                        data-bs-target="#v-pills-crush" type="button" role="tab">Crush</button>
-                    <button class="nav-link" id="v-pills-dream-tab"
-                        data-bs-target="#v-pills-dream" type="button" role="tab">Dream</button>
-                    <button class="nav-link" id="v-pills-enthusiasm-tab"
-                        data-bs-target="#v-pills-enthusiasm" type="button" role="tab">Enthusiasm</button>
-                    <button class="nav-link" id="v-pills-fragment-tab"
-                        data-bs-target="#v-pills-fragment" type="button" role="tab">Fragment</button>
-                    <button class="nav-link" id="v-pills-galaxy-tab"
-                        data-bs-target="#v-pills-galaxy" type="button" role="tab">Galaxy</button>
-                    <button class="nav-link" id="v-pills-hallucination-tab"
-                        data-bs-target="#v-pills-hallucination" type="button" role="tab">Hallucination</button>
-                    <button class="nav-link" id="v-pills-isolated-tab"
-                        data-bs-target="#v-pills-isolated" type="button" role="tab">Isolated</button>
-            </div>
-            <div class="tab-content me-auto mt-auto mb-auto" id="v-pills-tabContent">
-                <div class="tab-pane fade" id="v-pills-addicted" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-blind" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-crush" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-dream" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-enthusiasm" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-fragment" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-galaxy" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-hallucination" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-isolated" role="tabpanel" tabindex="0"></div>
-            </div>
-        </div>
-        <hr>
-        <h5>#lnb的日记#</h5>
-        <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-auto align-items-center" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link" id="v-pills-rage-tab"
-                        type="button" role="tab">rage</button>
-                    <button class="nav-link" id="v-pills-jake-tab"
-                        type="button" role="tab">jake</button>
-            </div>
-            <div class="tab-content me-auto mt-auto mb-auto" id="v-pills-tabContent2">
-                <div class="tab-pane fade" id="v-pills-rage" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-jake" role="tabpanel" tabindex="0"></div>
-            </div>
-        </div>
-        <hr>
-        <h5>#唐血鸿密辛1：褪色的王冠#</h5>
-        <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-auto align-items-center" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link" id="v-pills-Crown1-tab"
-                        type="button" role="tab">遇见</button>
-                    <button class="nav-link" id="v-pills-Crown2-tab"
-                        type="button" role="tab">宴会</button>
-            </div>
-            <div class="tab-content me-auto mt-auto mb-auto" id="v-pills-tabContent2">
-                <div class="tab-pane fade" id="v-pills-Crown1" role="tabpanel" tabindex="0"></div>
-                <div class="tab-pane fade" id="v-pills-Crown2" role="tabpanel" tabindex="0"></div>
-            </div>
-        </div>
+        <div id="formplaceholder"></div>
     </div>
 
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
