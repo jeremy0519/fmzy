@@ -64,7 +64,7 @@ $(document).ready(function () {
 
         const messageList = new Array();
         messageList[0] = "主线上线啦！记得去看看~"; //ok
-        messageList[1] = "咕咕~浮梦之屿内部人员都是大鸽子~"; //ok
+        messageList[1] = "8.11日是彬夏的生日！彬夏生日快乐！"; //ok
         messageList[2] = "感谢底层代码员72P和神秘人Array！"; //ok
         messageList[3] = "感谢文案与创意入股成员Rage！"; //ok
         messageList[4] = "感谢技术参与与代码员麦克斯韦！"; //ok

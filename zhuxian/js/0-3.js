@@ -45,6 +45,7 @@ $(document).ready(function () {
                 window.local_daoju = xxx.get("daoju")
                 window.local_dunwu = xxx.get("dunwu")
                 window.local_progress = xxx.get("progress")
+                window.local_Testpractice = xxx.get("Testpractice")
                 step02()
             },
             (error) => {
@@ -610,6 +611,7 @@ $(document).ready(function () {
             setPercent(100)
             if (window.local_progress < 3) {
                 window.local_progress = 3
+                window.local_Testpractice = window.local_Testpractice + 1
             }
             // 上传
             const objid = Cookies.get("objectId")
@@ -628,6 +630,7 @@ $(document).ready(function () {
                         yyy.set("daoju", window.local_daoju)
                         yyy.set("dunwu", window.local_dunwu)
                         yyy.set("progress", window.local_progress)
+                        yyy.set("Testpractice", window.local_Testpractice)
                         if (window.local_Tanghaogan >= window.local_Tangmax) {
                             yyy.set("Tangmax", window.local_Tanghaogan)
                         }

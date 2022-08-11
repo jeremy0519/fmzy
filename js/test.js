@@ -38,18 +38,18 @@ $(document).ready(function () {
 
             if (window.local_CurrentTestLevel == 0) {
                 //那么显示第一关的form
-                $("#title").text("执行者考核-Lv1");
+                $("#title").text("执行者考核#1：通天的巴别塔-Lv1");
                 $("#LevelNow").text("当前等级Lv0");
                 $("#formplaceholder").html(`
                 <form id="form">        
-                    <p class="mb-1 text-start text-primary">1.小唐和冬哥是哪个班的？</p>
+                    <p class="mb-1 text-start text-primary">小唐和冬哥是哪个班的？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option1" name="Question1" value="1">
                         <label class="form-check-label" for="Question1Option1">9班</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option2" name="Question1" value="2">
-                        <label class="form-check-label" for="Question1Option2">3班</label>
+                        <label class="form-check-label" for="Question1Option2">5班</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option3" name="Question1" value="3">
@@ -60,18 +60,22 @@ $(document).ready(function () {
                         <label class="form-check-label" for="Question1Option4">4班</label>
                     </div>
 
-                    <p class="mb-1 mt-2 text-start text-primary">2.如何对y=936x求导？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">彬夏生日</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option1" name="Question2" value="1">
-                        <label class="form-check-label" for="Question2Option1">936x</label>
+                        <label class="form-check-label" for="Question2Option1">7.13</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option2" name="Question2" value="2">
-                        <label class="form-check-label" for="Question2Option2">936</label>
+                        <label class="form-check-label" for="Question2Option2">1.27</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option3" name="Question2" value="3">
-                       <label class="form-check-label" for="Question2Option3">936x^2</label>
+                       <label class="form-check-label" for="Question2Option3">8.11</label>
+                    </div>
+                    <div class="form-check text-start">
+                        <input class="form-check-input" type="radio" id="Question2Option3" name="Question2" value="3">
+                       <label class="form-check-label" for="Question2Option3">10.24</label>
                     </div>
                     <button type="submit" class="btn btn-outline-info mt-2">提交</button>
                 </form>
@@ -93,7 +97,7 @@ $(document).ready(function () {
                             //所有选项都选了
                             //判断答案是否正确
                             //valueofquestion1和valueofoption2理论上取值分别为1,2,3,4和1,2,3
-                            if (valueOfQuestion1 == "4" && valueOfQuestion2 == "2") {
+                            if (valueOfQuestion1 == "4" && valueOfQuestion2 == "3") {
                                 //答案正确
                                 //准备保存进度
                                 const jake = new Parse.Query(classData);

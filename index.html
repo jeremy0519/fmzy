@@ -17,6 +17,9 @@
     <link href="css/global.css" rel="stylesheet">
     <script defer src="js/global.js"></script>
     <script defer src="js/index.js"></script>
+    <script defer src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script defer src="js/ggb.js"></script>
+
     <script>
         if (Cookies.get('objectId') == undefined) {
             window.location.href = '/signin.html'
@@ -101,6 +104,8 @@
         <!-- 开始按钮 -->
         <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalToggle1" role="button">开始游戏</a>
         <hr>
+        <div id="ggb-element" class="ms-auto me-auto"></div>
+        <hr>
         <!-- 开始公告卡片 -->
         <div class="card">
             <div class="card-header">
@@ -153,9 +158,9 @@
             <div class="card-body">
                 <h5 class="card-title text-start">环境适配音（调音系统）</h5>
                 <p class="card-text text-start mb-0 fst-italic text-muted">环境适配音是玩家在游玩中的音乐播放源，适当使用环境适配音可以优化游戏体验。</p>
-                <p class="card-text text-start mb-0">1.大部分主线与支线具有环境适配音。</p>
+                <p class="card-text text-start mb-0">1.大部分主线，支线与执行者考核具有环境适配音。</p>
                 <p class="card-text text-start mb-0">2.在主线与支线页面最上方，安有该页面的调音歌曲。玩家可以自行选择开关与否。</p>
-                <p class="card-text text-start mb-0">3.部分支线页面上方具有歌单，点击可以查看该页面的环境适配音所兼容的所有歌曲，玩家可以自行选择。</p>
+                <p class="card-text text-start mb-0">3.部分页面上方具有歌单，点击可以查看该页面的环境适配音所兼容的所有歌曲，玩家可以自行选择。</p>
             </div>
             <div class="card-body">
                 <h5 class="card-title text-start">守卫者灯塔（剧情回溯功能）</h5>
@@ -171,12 +176,19 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title text-start">执行者考核</h5>
-                <p class="card-text text-start mb-0 fst-italic text-muted">执行者考核是对浮梦之屿主线与支线的测试，是提升玩家等级的唯一方式。</p>
-                <p class="card-text text-start mb-0">WIP</p>
+                <p class="card-text text-start mb-0 fst-italic text-muted">执行者考核是对浮梦之屿所有功能相关内容的测试，是提升玩家等级的唯一方式。</p>
+                <p class="card-text text-start mb-0"><b>1.执行者考核仍在开发中，该词条仅为前瞻性说明，将会随时更改。</b></p>
+                <p class="card-text text-start mb-0">2.点击导航栏上“执行者考核”栏，可进入当期的执行者考核页面。</p>
+                <p class="card-text text-start mb-0">3.执行者考核为赛制季，每期都有不同的主题。在执行者考核中，玩家将会回答关于浮梦之屿所有内容的问卷。</p>
+                <p class="card-text text-start mb-0">4.执行者考核不以分数记制，每级皆有不同的题目。如若玩家全部回答正确，则将升入下一等级。</p>
+                <p class="card-text text-start mb-0">5.执行者考核需要门票进入。每推过一关主线均会获得一张门票，每日登录也会获得两张门票，活动更新亦会赠送一定的门票。每次考核消耗一张门票。</p>
+                <p class="card-text text-start mb-0">6.执行者考核的等级为部分支线剧情与其他功能的前置条件，希望玩家积极参与。</p>
+                <p class="card-text text-start mb-0">7.执行者考核赛制轮换后，原本玩家的执行者考核等级将会降1级，上一赛制的门票等则将不会清零。</p>
+                <p class="card-text text-start mb-0">8.执行者考核内置部分剧情设定，敬请玩家自行探索。</p>
             </div>
             <div class="card-body">
                 <h5 class="card-title text-start">活动一览表</h5>
-                <p class="card-text text-start mb-0">1.彬夏生日马上就到了，在当天将会进行限时活动，敬请期待</p>
+                <p class="card-text text-start mb-0">1.2022.8.11彬夏生日：执行者考核#1通天的巴别塔，一些剧情更新。</p>
             </div>
             <div class="card-body">
                 <h5 class="card-title text-start">其他功能一览</h5>
@@ -197,7 +209,7 @@
                     <div class="col">
                         <div class="card-body">
                             <h5 class="card-title">活动1</h5>
-                            <p class="card-text">执行者终端系统上线</p>
+                            <p class="card-text">系统权限调用系统与执行者信息录入表上线</p>
                         </div>
                     </div>
                     <div class="col">

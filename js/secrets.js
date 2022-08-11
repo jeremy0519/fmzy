@@ -41,7 +41,7 @@ $(document).ready(function () {
             window.local_Lianmax = rage.get("Lianmax");
             window.local_Yimengmax = rage.get("Yimengmax");
             window.local_progress = rage.get("progress");
-            window.local_Test1max = rage.get("Test1max");
+            window.local_CurrentTestLevel = rage.get("CurrentTestLevel");
             // 开始操作所有按钮啦
             // 先拿两个测试下
             // Begin-rage
@@ -358,7 +358,7 @@ $(document).ready(function () {
                 new bootstrap.Tooltip($("#v-pills-hallucination-tab"));
             }
             
-            if (window.local_Test1max>=1) {
+            if (window.local_CurrentTestLevel>=1) {
                 $("#v-pills-isolated-tab").attr("data-bs-toggle", "pill");
                 $("#v-pills-isolated-tab").attr("data-bs-target", "#v-pills-isolated"); //设置连接位置
                 $("#v-pills-isolated").html(`
@@ -409,8 +409,8 @@ $(document).ready(function () {
                 //激活tooltip（悬停时的文本）
                 new bootstrap.Tooltip($("#v-pills-isolated-tab"));
             }
-
-            if (1) {
+            
+            if (window.local_Tangmax>=10) {
                 //姑且假设这个按钮启用了
                 $("#v-pills-Crown1-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
                 $("#v-pills-Crown1-tab").attr("data-bs-target", "#v-pills-Crown1"); //设置连接位置
@@ -426,7 +426,7 @@ $(document).ready(function () {
                 new bootstrap.Tooltip($("#v-pills-Crown1-tab"));
             }
 
-            if (1) {
+            if (window.local_Tangmax>=20) {
                 //姑且假设这个按钮启用了
                 $("#v-pills-Crown2-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
                 $("#v-pills-Crown2-tab").attr("data-bs-target", "#v-pills-Crown2"); //设置连接位置
