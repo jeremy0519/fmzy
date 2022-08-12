@@ -60,7 +60,7 @@ $(document).ready(function () {
                     user.set("signature", "木有");
                     user.set("progress", 0);
                     user.set("CurrentTestLevel", 0);
-                    user.set("Testpratice", 0);
+                    user.set("Testpractice", 0);
                     user.save().then(
                         (user) => {
                             alertSuccess("注册成功，3秒后跳转首页");

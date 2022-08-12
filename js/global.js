@@ -38,8 +38,12 @@ $(document).ready(function () {
             (xxx) => {
                 const yyy = xxx.get("username");
                 $("#navbarDarkDropdownMenuLink").text("Signed in as: " + yyy);
+                var ll = xxx.get("lastLogin").toLocaleDateString();
                 xxx.save().then(() => {
                     var date = new Date();
+                    if (date.toLocaleDateString() != ll) {
+                        xxx.set("Testpractice", xxx.get("Testpractice") + 2);
+                    }
                     xxx.set("lastLogin", date);
                     return xxx.save();
                 });
@@ -64,28 +68,24 @@ $(document).ready(function () {
 
         const messageList = new Array();
         messageList[0] = "主线上线啦！记得去看看~"; //ok
-        messageList[1] = "8.11日是彬夏的生日！彬夏生日快乐！"; //ok
+        messageList[1] = "执行者考核#1通天的巴别塔已经开启！"; //ok
         messageList[2] = "感谢底层代码员72P和神秘人Array！"; //ok
         messageList[3] = "感谢文案与创意入股成员Rage！"; //ok
         messageList[4] = "感谢技术参与与代码员麦克斯韦！"; //ok
-        messageList[5] = //ok
-            "守卫者灯塔那束光————那是无上的辉光。";
+        messageList[5] = "守卫者灯塔那束光————那是无上的辉光。"; //ok
         messageList[6] = //ok
             "为什么要醒来？浮梦之屿，这片乐土，空气里都充斥着令人迷醉的气味……他们会被现实的规则束缚，但浮梦之屿不会……既然如此，为什么还要醒来？就当做了永远也无法醒来的美梦……";
-        messageList[7] = //ok
-            "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。";
-        messageList[8] = //ok
-            "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？";
-        messageList[9] = //ok
-            "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑";
-        messageList[10] = //ok
-            "暑假作业做完了吗？：D";
+        messageList[7] = "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。"; //ok
+        messageList[8] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"; //ok
+        messageList[9] = "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑"; //ok
+        messageList[10] = "暑假作业做完了吗？：D"; //ok
         const selection1 = Math.floor(Math.random() * senderList.length); //随机数
         const selection2 = Math.floor(Math.random() * 116); //[0,115]
-        if (selection2 <= 109){
+        if (selection2 <= 109) {
             var yushu = selection2 % 5;
             deliverMessage(senderList[selection1], messageList[yushu]);
-        }else{ //[110,115]
+        } else {
+            //[110,115]
             var cha = selection2 - 105; //[5,10]
             deliverMessage(senderList[selection1], messageList[cha]);
         }
