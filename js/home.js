@@ -86,13 +86,10 @@ $(document).ready(function () {
             $("#touxiang").attr("src", "ico/ico" + xxx.get("touxiang") + ".ico");
             $("#username").text(xxx.get("username"));
             $("#progress").text(getProgress(xxx.get("progress")));
+            $("#level").text("Lv" + xxx.get("CurrentTestLevel"));
             document.getElementById("signature").innerHTML = xxx.get("signature").replace(/\n/g, "<br />").replace(/\r\n/g, "<br />");
             $("#register").text(xxx.createdAt.toLocaleDateString());
-            if (xxx.get("lastLogin") != undefined) {
-                $("#lastlogin").text(xxx.get("lastLogin").toLocaleDateString());
-            } else {
-                $("#lastlogin").text("从未登录");
-            }
+            $("#lastlogin").text(xxx.get("lastLogin").toLocaleDateString());
             $("#page").text("帕普齐斯好感：" + xxx.get("Pagehakhaogan"));
             $("#tang").text("唐血鸿好感：" + xxx.get("Tanghaogan"));
             $("#binxia").text("彬夏好感：" + xxx.get("Binxiahaogan"));
