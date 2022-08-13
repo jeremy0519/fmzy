@@ -61,6 +61,8 @@ $(document).ready(function () {
                     user.set("progress", 0);
                     user.set("CurrentTestLevel", 0);
                     user.set("Testpractice", 0);
+                    var d = new Date();
+                    user.set("lastLogin", d);
                     user.save().then(
                         (user) => {
                             alertSuccess("注册成功，3秒后跳转首页");
