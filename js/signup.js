@@ -63,6 +63,7 @@ $(document).ready(function () {
                     user.set("Testpractice", 0);
                     var d = new Date();
                     user.set("lastLogin", d);
+                    user.set("dianshu", 0);
                     user.save().then(
                         (user) => {
                             alertSuccess("注册成功，3秒后跳转首页");
