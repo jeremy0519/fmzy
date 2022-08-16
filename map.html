@@ -54,7 +54,8 @@
                     <li class="nav-item"><a href="http://43.142.126.163" class="nav-link">首页</a></li>
                     <li class="nav-item"><a href="http://43.142.126.163/chat.html" class="nav-link">执行者终端</a></li>
                     <li class="nav-item"><a href="http://43.142.126.163/list.html" class="nav-link">系统权限调用</a></li>
-                    <li class="nav-item"><a href="http://43.142.126.163/test.html" class="nav-link active">执行者考核</a></li>
+                    <li class="nav-item"><a href="http://43.142.126.163/test.html" class="nav-link active">执行者考核</a>
+                    </li>
                     <li class="nav-item dropdown-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,8 +70,27 @@
         </div>
     </nav>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-outline-success" id="modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
+        <h4>探索地图</h4>
+        <h6 class="text-muted" id="tansuo"></h6>
         <a class="btn btn-outline-info" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
             aria-controls="offcanvasExample">
             歌单
@@ -105,65 +125,94 @@
             </div>
         </div>
         <hr>
-        <div class="row bg-dark">
+        <div class="row bg-dark bg-opacity-75">
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi0" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi1" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi2" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
-            </div>
-        </div>
-        <div class="row bg-dark">
-            <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi3" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
-            </div>
-            <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
-            </div>
-            <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi4" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
         </div>
-        <div class="row bg-dark">
+        <div class="row bg-dark bg-opacity-75">
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi5" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi6" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi7" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi8" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi9" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
         </div>
-        <div class="row bg-dark">
+        <div class="row bg-dark bg-opacity-75">
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi10" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi11" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi12" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
             <div class="col">
-                <img src="ico/candle.png" class="img-fluid" width="100" height="100"></img>
+                <img id="gezi13" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi14" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+        </div>
+        <div class="row bg-dark bg-opacity-75">
+            <div class="col">
+                <img id="gezi15" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi16" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi17" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi18" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi19" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+        </div>
+        <div class="row bg-dark bg-opacity-75">
+            <div class="col">
+                <img id="gezi20" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi21" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi22" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi23" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
+            </div>
+            <div class="col">
+                <img id="gezi24" src="ico/candle.png" class="img-fluid px-3 py-3" width="65" height="65"></img>
             </div>
         </div>
     </div>
 
-    <p class="mt-5 mb-3 text-muted">&copy; 2022</p> 
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     <!--toast-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

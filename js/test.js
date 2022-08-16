@@ -62,7 +62,7 @@ $(document).ready(function () {
             $("#practiceNum").text("当前门票数：" + window.local_Testpractice);
             if (window.local_CurrentTestLevel == 0) {
                 $("#title").text("执行者考核#1：通天的巴别塔-Lv1");
-                $("#LevelNow").text("当前等级Lv0");
+                $("#LevelNow").text("当前等级Lv0,该层推荐进度：0-3满配好感");
                 $("#startchallenge").click(function () {
                     if (window.local_Testpractice != 0) {
                         //那么显示第一关的form
@@ -359,8 +359,8 @@ $(document).ready(function () {
                 });
             } else if (window.local_CurrentTestLevel == 1) {
                 //那么显示第二关的form
-                $("#title").text("执行者考核-Lv2");
-                $("#LevelNow").text("当前等级Lv1");
+                $("#title").text("执行者考核#1：通天的巴别塔-Lv2");
+                $("#LevelNow").text("当前等级Lv1，推荐进度：0-3满配好感");
                 $("#formplaceholder").html(`
                 <p>WIP</p>
                 `);
