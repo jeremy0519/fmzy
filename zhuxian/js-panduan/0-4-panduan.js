@@ -1,5 +1,5 @@
 Parse.initialize("fmzy")
-Parse.serverURL = 'http://43.142.126.163:1337/parse'
+Parse.serverURL = 'https://43.142.126.163/parse'
 const classData = Parse.Object.extend("fmzy")
 
 function check() {
@@ -8,7 +8,7 @@ function check() {
     query.get(objid).then((xxx) => {
         const yyy = xxx.get("nextPage")
         if (yyy != "0-4"){
-            window.location.href = "http://43.142.126.163"
+            window.location.href = "https://43.142.126.163"
         }
        
     }, (error) => {
@@ -16,7 +16,7 @@ function check() {
 }
 
 if (Cookies.get('objectId') == undefined) {
-    window.location.href = 'http://43.142.126.163/signin.html'
+    window.location.href = 'https://43.142.126.163/signin.html'
 } else {
     check()
 }

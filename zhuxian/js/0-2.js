@@ -1,6 +1,6 @@
 $(document).ready(function () {
     Parse.initialize("fmzy")
-    Parse.serverURL = "http://43.142.126.163:1337/parse"
+    Parse.serverURL = "https://43.142.126.163/parse"
     const classData = Parse.Object.extend("fmzy")
     const alertPlaceholder = $("#liveAlertPlaceholder")
     function alertError(message) {
@@ -539,7 +539,7 @@ $(document).ready(function () {
         })
         */
         $("#redirect").click(function () {
-            window.location.href = "http://43.142.126.163/zhuxian/0-3.html"
+            window.location.href = "https://43.142.126.163/zhuxian/0-3.html"
         })
     }
     step01()
