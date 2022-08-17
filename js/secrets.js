@@ -48,18 +48,21 @@ $(document).ready(function () {
             // 注意是rage！！！
             if (1) {
                 //姑且假设这个按钮启用了
-                $("#v-pills-rage-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
-                $("#v-pills-rage-tab").attr("data-bs-target", "#v-pills-rage"); //设置连接位置
-                $("#v-pills-rage").html(`
-                <p class="mb-0">936</p>
-                <p class="mb-0">1038</p>
+                $("#v-pills-Bika-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
+                $("#v-pills-Bika-tab").attr("data-bs-target", "#v-pills-Bika"); //设置连接位置
+                $("#v-pills-Bika").html(`
+                <p class="mb-0">姓名：彬夏</p>
+                <p class="mb-0">性别：女</p>
+                <p class="mb-0">类别：类克隆人</p>
+                <p class="mb-0">身高：178</p>
+                <p class="mb-0">简介：由[#039]号的细胞复制而来，性格与#039号大同小异，更为理性。</p>
                 `); //设置内容
             } else {
-                $("#v-pills-rage-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary
-                $("#v-pills-rage-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
-                $("#v-pills-rage-tab").attr("data-bs-title", "未达成rage条件"); //设置悬停文字
+                $("#v-pills-Bika-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary
+                $("#v-pills-Bika-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
+                $("#v-pills-Bika-tab").attr("data-bs-title", "未达成彬夏人设条件，达成条件：你这是被封号了？"); //设置悬停文字
                 //激活tooltip（悬停时的文本）
-                new bootstrap.Tooltip($("#v-pills-rage-tab"));
+                new bootstrap.Tooltip($("#v-pills-Bika-tab"));
             }
             // End-rage
 
@@ -67,18 +70,18 @@ $(document).ready(function () {
             // 注意是jake！！！
             if (0) {
                 //姑且假设这个按钮禁用了
-                $("#v-pills-jake-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
-                $("#v-pills-jake-tab").attr("data-bs-target", "#v-pills-rage"); //设置连接位置
-                $("#v-pills-jake").html(`
+                $("#v-pills-Tang-tab").attr("data-bs-toggle", "pill"); //添加正常查看操作
+                $("#v-pills-Tang-tab").attr("data-bs-target", "#v-pills-Tang"); //设置连接位置
+                $("#v-pills-Tang").html(`
                 <p class="mb-0">1038</p>
                 <p class="mb-0">936</p>
                 `); //设置内容
             } else {
-                $("#v-pills-jake-tab").attr("class", "nav-link text-secondary"); //添加灰色
-                $("#v-pills-jake-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
-                $("#v-pills-jake-tab").attr("data-bs-title", "未达成jake条件"); //设置悬停文字
+                $("#v-pills-Tang-tab").attr("class", "nav-link text-secondary"); //添加灰色
+                $("#v-pills-Tang-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
+                $("#v-pills-Tang-tab").attr("data-bs-title", "未达成唐血鸿人设条件，达成条件：唐好感达到1000000000"); //设置悬停文字
                 //激活tooltip（悬停时的文本）
-                new bootstrap.Tooltip($("#v-pills-jake-tab"));
+                new bootstrap.Tooltip($("#v-pills-Tang-tab"));
             }
             // End-jake
             
