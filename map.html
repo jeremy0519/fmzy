@@ -7,7 +7,6 @@
     <title>浮梦之屿</title>
     <link href="https://cdn.staticfile.org/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.staticfile.org/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
@@ -18,7 +17,7 @@
     <script defer src="js/global.js"></script>
     <script defer src="js/map.js"></script>
     <script>
-        if (Cookies.get('objectId') == undefined) {
+        if (localStorage.getItem('objectId') == undefined) {
             window.location.href = '/signin.html'
         }
     </script>

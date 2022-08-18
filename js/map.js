@@ -30,7 +30,7 @@ $(document).ready(function () {
         window.location.href = "#";
     }
     const query = new Parse.Query(classData);
-    query.get(Cookies.get("objectId")).then(
+    query.get(localStorage.getItem("objectId")).then(
         (rage) => {
             // 查询需要的变量并保存
             //window.local_tansuo = rage.get("tansuo");

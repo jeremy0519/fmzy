@@ -25,7 +25,7 @@ $(document).ready(function () {
     }
     setPercent(0)
     async function step01() {
-        const objid = Cookies.get("objectId")
+        const objid = localStorage.getItem("objectId")
         const query = new Parse.Query(classData)
         query.get(objid).then(
             (xxx) => {
@@ -451,7 +451,7 @@ $(document).ready(function () {
                 window.local_Testpractice = window.local_Testpractice + 1
             }
             // 上传
-            const objid = Cookies.get("objectId")
+            const objid = localStorage.getItem("objectId")
             const query = new Parse.Query(classData)
             query.get(objid).then(
                 (xxx) => {

@@ -28,7 +28,7 @@ $(document).ready(function () {
                     const object = results[0];
                     const correctpwd = object.get("password");
                     if (correctpwd == pswd) {
-                        Cookies.set("objectId", object.id);
+                        localStorage.setItem("objectId", object.id);
                         window.location.href = "/";
                     } else {
                         alertError("密码不正确");

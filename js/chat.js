@@ -3,12 +3,12 @@ $(document).ready(function () {
     Parse.initialize("fmzy");
     Parse.serverURL = "https://43.142.126.163/parse";
     const classData = Parse.Object.extend("fmzy");
-    const objid = Cookies.get("objectId");
+    const objid = localStorage.getItem("objectId");
     const query = new Parse.Query(classData);
     query.get(objid).then(
         (xxx) => {
             const yyy = xxx.get("username");
-            lock(yyy, Cookies.get("objectId"), xxx.get("touxiang"));
+            lock(yyy, localStorage.getItem("objectId"), xxx.get("touxiang"));
         },
         (error) => {
             alertError(error.message + "（你可以点击注销并重新登录）");
@@ -43,8 +43,7 @@ $(document).ready(function () {
                 serverURLs: "https://gdlxwvum.lc-cn-e1-shared.com",
                 visitor: true,
             });
-            $("div.vheader.item3").remove();
-            
+            $("div.vheader.item3").attr("style","display:none;");
         });
     }
 });

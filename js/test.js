@@ -54,7 +54,7 @@ $(document).ready(function () {
         $("#form").append(wrapper);
     }
     const query = new Parse.Query(classData);
-    query.get(Cookies.get("objectId")).then((rage) => {
+    query.get(localStorage.getItem("objectId")).then((rage) => {
         // 查询需要的变量并保存
         window.local_CurrentTestLevel = rage.get("CurrentTestLevel");
         window.local_Testpractice = rage.get("Testpractice");
@@ -251,7 +251,7 @@ $(document).ready(function () {
                     //扣门票
                     window.local_Testpractice -= 1;
                     const mrz = new Parse.Query(classData);
-                    mrz.get(Cookies.get("objectId")).then(
+                    mrz.get(localStorage.getItem("objectId")).then(
                         (user) => {
                             user.save().then(() => {
                                 user.set("Testpractice", window.local_Testpractice);
@@ -326,7 +326,7 @@ $(document).ready(function () {
                             //答案正确
                             //准备保存进度
                             const jake = new Parse.Query(classData);
-                            jake.get(Cookies.get("objectId")).then(
+                            jake.get(localStorage.getItem("objectId")).then(
                                 (user) => {
                                     user.save().then(() => {
                                         user.set("CurrentTestLevel", 1);
@@ -552,7 +552,7 @@ $(document).ready(function () {
                     //扣门票
                     window.local_Testpractice -= 1;
                     const mrz = new Parse.Query(classData);
-                    mrz.get(Cookies.get("objectId")).then(
+                    mrz.get(localStorage.getItem("objectId")).then(
                         (user) => {
                             user.save().then(() => {
                                 user.set("Testpractice", window.local_Testpractice);
@@ -627,7 +627,7 @@ $(document).ready(function () {
                             //答案正确
                             //准备保存进度
                             const jake = new Parse.Query(classData);
-                            jake.get(Cookies.get("objectId")).then(
+                            jake.get(localStorage.getItem("objectId")).then(
                                 (user) => {
                                     user.save().then(() => {
                                         user.set("CurrentTestLevel", 2);

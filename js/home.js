@@ -102,7 +102,7 @@ $(document).ready(function () {
         }
     );
     // permission granted
-    if (window.objectId == Cookies.get("objectId")) {
+    if (window.objectId == localStorage.getItem("objectId")) {
         //添加编辑表单
         var element = document.createElement("div");
         element.setAttribute("class", "text-start");
@@ -243,7 +243,7 @@ $(document).ready(function () {
                                         loginmodal("开始更新评论头像");
                                         loginmodal("正在查询你发送的评论...");
                                         const qy = new AV.Query("Comment");
-                                        qy.equalTo("link", "https://43.142.126.163/home.html?" + Cookies.get("objectId"));
+                                        qy.contains("link", localStorage.getItem("objectId"));
                                         qy.limit(1000);
                                         const results = await qy.find();
                                         loginmodal("共" + results.length + "条");
@@ -256,7 +256,7 @@ $(document).ready(function () {
                                             loginmodal("第" + j + "个更新完毕");
                                         }
                                         successinmodal("已删除用户，3秒后跳转登录页");
-                                        Cookies.remove("objectId");
+                                        localStorage.removeItem("objectId");
                                         setTimeout(() => {
                                             window.location.href = "https://43.142.126.163/signin.html";
                                         }, 3000);
@@ -341,7 +341,7 @@ $(document).ready(function () {
                                     loginmodal("开始更新头像和昵称");
                                     loginmodal("正在查询你发送的评论...");
                                     const q = new AV.Query("Comment");
-                                    q.equalTo("link", "https://43.142.126.163/home.html?" + Cookies.get("objectId"));
+                                    q.contains("link", localStorage.getItem("objectId"));
                                     q.limit(1000);
                                     const results = await q.find();
                                     loginmodal("共" + results.length + "条");

@@ -31,8 +31,8 @@ $(document).ready(function () {
         window.location.href = "#";
     }
 
-    if (Cookies.get("objectId") != undefined) {
-        const objid = Cookies.get("objectId");
+    if (localStorage.getItem("objectId") != undefined) {
+        const objid = localStorage.getItem("objectId");
         const query = new Parse.Query(classData);
         query.get(objid).then(
             (xxx) => {
@@ -92,14 +92,14 @@ $(document).ready(function () {
         //END MESSAGE
 
         $("#logout").click(function () {
-            Cookies.remove("objectId");
+            localStorage.removeItem("objectId");
             alertSuccess("已注销，3秒后跳转登录页");
             setTimeout(function () {
                 window.location.href = "/signin.html";
             }, 3000);
         });
         $("#enterHome").click(function () {
-            window.location.href = "/home.html?" + Cookies.get("objectId");
+            window.location.href = "/home.html?" + localStorage.getItem("objectId");
         });
     }
 });

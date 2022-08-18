@@ -31,7 +31,7 @@ $(document).ready(function () {
     }
 
     function updateWelcomeMessage() {
-        const objid = Cookies.get("objectId");
+        const objid = localStorage.getItem("objectId");
         const query = new Parse.Query(classData);
         query.get(objid).then(
             (xxx) => {
@@ -49,7 +49,7 @@ $(document).ready(function () {
     updateWelcomeMessage();
 
     // check whether add button
-    const objid = Cookies.get("objectId");
+    const objid = localStorage.getItem("objectId");
     const query = new Parse.Query(classData);
     query.get(objid).then(
         (xxx) => {
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 <button type="button" id="continue" class="btn btn-primary">继续</button>
                 <button type="button" id="mixin" class="btn btn-warning">密辛</button>`;
                 $("#mixin").click(function () {
-                    const objid = Cookies.get("objectId");
+                    const objid = localStorage.getItem("objectId");
                     const query = new Parse.Query(classData);
                     query.get(objid).then(
                         (xxx) => {
@@ -74,7 +74,7 @@ $(document).ready(function () {
                     );
                 });
                 $("#continue").click(function () {
-                    const objid = Cookies.get("objectId");
+                    const objid = localStorage.getItem("objectId");
                     const query = new Parse.Query(classData);
                     query.get(objid).then(
                         (xxx) => {
@@ -88,7 +88,7 @@ $(document).ready(function () {
                 });
             
                 $("#startNew").click(function () {
-                    const objid = Cookies.get("objectId");
+                    const objid = localStorage.getItem("objectId");
                     const query = new Parse.Query(classData);
                     query.get(objid).then(
                         (user) => {
@@ -124,7 +124,7 @@ $(document).ready(function () {
     );
 
     $("#continue").click(function () {
-        const objid = Cookies.get("objectId");
+        const objid = localStorage.getItem("objectId");
         const query = new Parse.Query(classData);
         query.get(objid).then(
             (xxx) => {
@@ -138,7 +138,7 @@ $(document).ready(function () {
     });
 
     $("#startNew").click(function () {
-        const objid = Cookies.get("objectId");
+        const objid = localStorage.getItem("objectId");
         const query = new Parse.Query(classData);
         query.get(objid).then(
             (user) => {
