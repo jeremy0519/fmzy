@@ -1,8 +1,8 @@
 Parse.initialize("fmzy");
-Parse.serverURL = "https://43.142.126.163/parse";
+Parse.serverURL = "http://43.142.126.163/parse";
 const classData = Parse.Object.extend("fmzy");
 const query = new Parse.Query(classData);
-query.get(location.href.substring(33)).then(
+query.get(location.href.substring(32)).then(
     () => {},
     () => {
         window.location.href = "/index.html";
@@ -71,7 +71,7 @@ $(document).ready(function () {
         $(".clearfix").remove();
     }
     // get id
-    window.objectId = location.href.substring(33);
+    window.objectId = location.href.substring(32);
     // fill in blanks
     const query = new Parse.Query(classData);
     query.get(window.objectId).then(
@@ -131,39 +131,39 @@ $(document).ready(function () {
             <div></div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico1.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio1"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico1.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico2.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio2"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico2.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                <label class="form-check-label" for="inlineRadio3"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico3.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio3"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico3.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                <label class="form-check-label" for="inlineRadio4"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico4.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio4"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico4.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-                <label class="form-check-label" for="inlineRadio5"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico5.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio5"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico5.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
-                <label class="form-check-label" for="inlineRadio6"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico6.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio6"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico6.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option7">
-                <label class="form-check-label" for="inlineRadio7"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico7.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio7"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico7.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option8">
-                <label class="form-check-label" for="inlineRadio8"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico8.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio8"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico8.ico"</img></label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="option9">
-                <label class="form-check-label" for="inlineRadio9"><img width="30" height="30" class="rounded-circle" src="https://43.142.126.163/ico/ico9.ico"</img></label>
+                <label class="form-check-label" for="inlineRadio9"><img width="30" height="30" class="rounded-circle" src="http://43.142.126.163/ico/ico9.ico"</img></label>
             </div>
             <div style="display:block" class="mb-2"></div>
             <button style="display:block" data-bs-toggle="modal" data-bs-target="#modalToggle1" type="submit" class="btn btn-outline-success">提交</button>
@@ -250,7 +250,7 @@ $(document).ready(function () {
                                         for (var i = 0; i < results.length; i++) {
                                             var rage = results[i];
                                             rage.unset("link");
-                                            rage.set("mail", "https://43.142.126.163/logo.ico");
+                                            rage.set("mail", "http://43.142.126.163/logo.ico");
                                             await rage.save();
                                             var j = i + 1;
                                             loginmodal("第" + j + "个更新完毕");
@@ -258,7 +258,7 @@ $(document).ready(function () {
                                         successinmodal("已删除用户，3秒后跳转登录页");
                                         localStorage.removeItem("objectId");
                                         setTimeout(() => {
-                                            window.location.href = "https://43.142.126.163/signin.html";
+                                            window.location.href = "http://43.142.126.163/signin.html";
                                         }, 3000);
                                     }
                                 },
@@ -282,7 +282,7 @@ $(document).ready(function () {
                 Event.stopPropagation();
                 errorinmodal("用户名过长，3秒后刷新");
                 setTimeout(() => {
-                    window.location.href = "https://43.142.126.163/home.html?" + window.objectId;
+                    window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
                 }, 3000);
             } else {
                 const query = new Parse.Query(classData);
@@ -331,7 +331,7 @@ $(document).ready(function () {
                                     loginmodal("旧昵称与新昵称相同，无需更改");
                                     successinmodal("已更新个人信息，3秒后刷新");
                                     setTimeout(() => {
-                                        window.location.href = "https://43.142.126.163/home.html?" + window.objectId;
+                                        window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
                                     }, 3000);
                                 } else {
                                     loginmodal("头像或昵称需要修改");
@@ -348,14 +348,14 @@ $(document).ready(function () {
                                     for (var i = 0; i < results.length; i++) {
                                         var rage = results[i];
                                         rage.set("nick", un);
-                                        rage.set("mail", "https://43.142.126.163/ico/ico" + tx + ".ico");
+                                        rage.set("mail", "http://43.142.126.163/ico/ico" + tx + ".ico");
                                         await rage.save();
                                         var j = i + 1;
                                         loginmodal("第" + j + "个更新完毕");
                                     }
                                     successinmodal("已更新评论头像和昵称，3秒后刷新");
                                     setTimeout(() => {
-                                        window.location.href = "https://43.142.126.163/home.html?" + window.objectId;
+                                        window.location.href = "http://43.142.126.163/home.html?" + window.objectId;
                                     }, 3000);
                                 }
                             });

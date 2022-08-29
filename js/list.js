@@ -1,6 +1,6 @@
 $(document).ready(function () {
     Parse.initialize("fmzy");
-    Parse.serverURL = "https://43.142.126.163/parse";
+    Parse.serverURL = "http://43.142.126.163/parse";
     const classData = Parse.Object.extend("fmzy");
     const alertPlaceholder = $("#liveAlertPlaceholder");
     function alertError(message) {
@@ -43,14 +43,14 @@ $(document).ready(function () {
             var img = document.createElement("img");
             img.setAttribute("width", "30");
             img.setAttribute("height", "30");
-            img.setAttribute("src", "https://43.142.126.163/ico/ico" + results[i].get("touxiang") + ".ico");
+            img.setAttribute("src", "http://43.142.126.163/ico/ico" + results[i].get("touxiang") + ".ico");
             img.setAttribute("class", "rounded-circle img-fluid");
             cell2.append(img);
             var cell3 = document.createElement("td");
             cell3.innerHTML = results[i].get("username");
             var cell4 = document.createElement("td");
             var a = document.createElement("a");
-            a.setAttribute("href", "https://43.142.126.163/home.html?" + results[i].id);
+            a.setAttribute("href", "http://43.142.126.163/home.html?" + results[i].id);
             a.setAttribute("class", "nav-link text-primary");
             a.setAttribute("target", "_blank");
             a.innerHTML = "查看信息录入表";

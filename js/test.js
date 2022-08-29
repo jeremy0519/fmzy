@@ -1,6 +1,6 @@
 $(document).ready(function () {
     Parse.initialize("fmzy");
-    Parse.serverURL = "https://43.142.126.163/parse";
+    Parse.serverURL = "http://43.142.126.163/parse";
     const classData = Parse.Object.extend("fmzy");
     const alertPlaceholder = $("#liveAlertPlaceholder");
     function alertError(message) {
@@ -166,22 +166,22 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">帕普齐斯在浮梦之屿的编号是？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">主线0-1与0-2开放时间？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option1" name="Question6" value="1">
-                        <label class="form-check-label" for="Question6Option1">#1772</label>
+                        <label class="form-check-label" for="Question6Option1">7.17</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option2" name="Question6" value="2">
-                        <label class="form-check-label" for="Question6Option2">#039</label>
+                        <label class="form-check-label" for="Question6Option2">8.19</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option3" name="Question6" value="3">
-                       <label class="form-check-label" for="Question6Option3">#1987</label>
+                       <label class="form-check-label" for="Question6Option3">8.11</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option4" name="Question6" value="4">
-                       <label class="form-check-label" for="Question6Option4">#1643</label>
+                       <label class="form-check-label" for="Question6Option4">7.11</label>
                     </div>`,
                             `
                     <p class="mb-1 mt-2 text-start text-primary">系统权限调用是什么功能？</p>
@@ -203,22 +203,22 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">綮冬在浮梦之屿的编号是？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">浮梦之屿目前未上线以下哪项功能？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option1" name="Question8" value="1">
-                        <label class="form-check-label" for="Question8Option1">#103</label>
+                        <label class="form-check-label" for="Question8Option1">密辛</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option2" name="Question8" value="2">
-                        <label class="form-check-label" for="Question8Option2">#1643</label>
+                        <label class="form-check-label" for="Question8Option2">守卫者灯塔</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option3" name="Question8" value="3">
-                       <label class="form-check-label" for="Question8Option3">#039</label>
+                       <label class="form-check-label" for="Question8Option3">信息录入表</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option4" name="Question8" value="4">
-                       <label class="form-check-label" for="Question8Option4">都不是</label>
+                       <label class="form-check-label" for="Question8Option4">均没有上线</label>
                     </div>`,
                         ],
                         correct: [4, 4, 2, 3, 1, 4, 4, 3],
@@ -333,7 +333,7 @@ $(document).ready(function () {
                                         return user.save().then(() => {
                                             alertSuccessInForm("答案全部正确，通关！3秒后刷新以进入下一层");
                                             setTimeout(() => {
-                                                window.location.href = "https://43.142.126.163/test.html";
+                                                window.location.href = "http://43.142.126.163/test.html";
                                             }, 3000);
                                         });
                                     });
@@ -346,7 +346,7 @@ $(document).ready(function () {
                             //答案错误
                             alertErrorInForm("非常抱歉，该层巴别塔未通关成功。3秒后为你刷新重试");
                             setTimeout(() => {
-                                window.location.href = "https://43.142.126.163/test.html";
+                                window.location.href = "http://43.142.126.163/test.html";
                             }, 3000);
                         }
                     });
@@ -634,7 +634,7 @@ $(document).ready(function () {
                                         return user.save().then(() => {
                                             alertSuccessInForm("答案全部正确，通关！3秒后刷新以进入下一层");
                                             setTimeout(() => {
-                                                window.location.href = "https://43.142.126.163/test.html";
+                                                window.location.href = "http://43.142.126.163/test.html";
                                             }, 3000);
                                         });
                                     });
@@ -647,7 +647,7 @@ $(document).ready(function () {
                             //答案错误
                             alertErrorInForm("非常抱歉，该层巴别塔未通关成功。3秒后为你刷新重试");
                             setTimeout(() => {
-                                window.location.href = "https://43.142.126.163/test.html";
+                                window.location.href = "http://43.142.126.163/test.html";
                             }, 3000);
                         }
                     });

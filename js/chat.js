@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // 换用户名和主页
     Parse.initialize("fmzy");
-    Parse.serverURL = "https://43.142.126.163/parse";
+    Parse.serverURL = "http://43.142.126.163/parse";
     const classData = Parse.Object.extend("fmzy");
     const objid = localStorage.getItem("objectId");
     const query = new Parse.Query(classData);
@@ -19,8 +19,8 @@ $(document).ready(function () {
         localStorage.removeItem("_v_Cache_Meta");
         var data = {
             nick: a,
-            link: "https://43.142.126.163/home.html?" + b,
-            mail: "https://43.142.126.163/ico/ico" + c + ".ico",
+            link: "http://43.142.126.163/home.html?" + b,
+            mail: "http://43.142.126.163/ico/ico" + c + ".ico",
         };
         data = JSON.stringify(data);
         localStorage.setItem("_v_Cache_Meta", data);
