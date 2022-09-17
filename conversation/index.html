@@ -14,8 +14,12 @@
     <link href="/logo.ico" rel="icon">
     <link href="/css/global.css" rel="stylesheet">
     <script defer src="/js/global.js"></script>
-    <script defer src="/zhuxian/js-panduan/0-1-panduan.js"></script>
-    <script defer src="/zhuxian/js/0-1.js"></script>
+    <script defer src="/js/conversation/conversation.js"></script>
+    <script>
+        if (localStorage.getItem('objectId') == undefined) {
+            window.location.href = '/signin.html'
+        }
+    </script>
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -33,28 +37,30 @@
     </symbol>
 </svg>
 
-<body>
+<body class="text-center">
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 
         <div class="container-fluid">
-            <img class="bi me-2" width="32" height="32" src="/logo.ico"></img>
+            <img class="bi me-2" width="32" height="32" src="logo.ico"></img>
             <a class="navbar-brand" href="#">浮梦之屿</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0  align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item"><a href="/" class="nav-link">首页</a></li>
                     <li class="nav-item"><a href="//chat.html" class="nav-link">执行者终端</a></li>
-                    <li class="nav-item"><a href="//list.html" class="nav-link">系统权限调用</a></li>
+                    <li class="nav-item"><a href="//list.html" class="nav-link active">系统权限调用</a>
+                    </li>
                     <li class="nav-item"><a href="//test.html" class="nav-link">执行者考核</a></li>
+
                     <li class="nav-item dropdown-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
-                         <ul class="dropdown-menu text-center" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a id="logout" class="dropdown-item" href="#">退出登录</a></li>
                             <li><a id="enterHome" class="dropdown-item" href="#">查看信息录入表</a></li>
                         </ul>
@@ -66,18 +72,38 @@
 
     <div class="container">
         <div id="liveAlertPlaceholder"></div>
-        <h4 class="text-center shadow p-3 bg-body rounded">主线：0-1</h4>
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-        </div>
-        <div class="text-center">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=101126&auto=1&height=66"></iframe>
-        </div>
-        <div class="text-center" id="zhuxianArea"></div>
-        <div id="formPlaceholder"></div>
+        <h4 id="count"></h4>
+        <table class="table table-light table-hover table-responsive table-striped">
+            <tbody>
+                <tr>
+                    <th scope="row">3</th>
+                    <td><img width="30" height="30" src="http://43.142.126.163/ico/ico3.ico"
+                            class="rounded-circle img-fluid"></td>
+                    <td>省略号</td>
+                    <td><a href="//home.html?uhKquorYLw" class="nav-link text-primary"
+                            target="_blank">查看信息录入表</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td><img width="30" height="30" src="http://43.142.126.163/ico/ico5.ico"
+                            class="rounded-circle img-fluid"></td>
+                    <td>殊烟</td>
+                    <td><a href="//home.html?5T3mrrmcpm" class="nav-link text-primary"
+                            target="_blank">查看信息录入表</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td><img width="30" height="30" src="http://43.142.126.163/ico/ico3.ico"
+                            class="rounded-circle img-fluid"></td>
+                    <td>Maxwell_</td>
+                    <td><a href="//home.html?jUAG2kVHf0" class="nav-link text-primary"
+                            target="_blank">查看信息录入表</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <p class="mt-5 mb-3 text-muted text-center">&copy; 2022</p> 
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+    </div>
     <!--toast-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -89,7 +115,6 @@
             <div class="toast-body text-center">Hello</div>
         </div>
     </div>
-
 </body>
 
 </html>

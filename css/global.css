@@ -4,7 +4,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
+    padding-top: 4.5rem;
 }
 nav.navbar {
-    background-color: slateblue;
+    background-color:chocolate;
 }
