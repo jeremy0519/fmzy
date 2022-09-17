@@ -78,7 +78,7 @@ $(document).ready(function () {
         messageList[7] = "我写过如此多的人物，然而自己却是一片混沌；但是，只要我不倒下，我就不会停止书写。"; //ok
         messageList[8] = "浮梦之屿的执行者考核试题1：冬哥和小唐是哪个班的？"; //ok
         messageList[9] = "昂，偷偷和你讲个秘密，浮梦之屿官方使用的照片格式是jpg，文字是txt，logo是ico，要不要试试呢（笑"; //ok
-        messageList[10] = "暑假作业做完了吗？：D"; //ok
+        messageList[10] = "作业做完了吗？：D"; //ok
         const selection1 = Math.floor(Math.random() * senderList.length); //随机数
         const selection2 = Math.floor(Math.random() * 116); //[0,115]
         if (selection2 <= 109) {
