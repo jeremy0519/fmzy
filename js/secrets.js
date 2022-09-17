@@ -470,7 +470,7 @@ $(document).ready(function () {
                 <p class="mb-0 ms-3 text-start">我梦到我站在一条河边，那条河仿佛浅而窄，其中的水潺潺流淌；然而某些时刻，那水下偶尔闪过黑暗的涡流，强大到令人心惊。</p>
                 <p class="mb-0 ms-3 text-start">只是看一眼，我仿佛就要被漩涡吸附；当我已经半只脚踏入旋涡中时，我陡然惊醒，看向窗外。依然是漆黑的夜。</p>
                 <p class="mb-0 ms-3 text-start">今天就写这么多吧。</p>
-                <p class="mb-0 ms-3 text-start">天也快亮了，又能起来晒太阳了。</p>
+                <p class="mb-0 ms-3 text-start">忽然好想晒太阳啊。不知道升日圣地，为什么总是阴雨绵绵，没有太阳呢？</p>
                 `); //设置内容
             } else {
                 $("#v-pills-Crown1-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary

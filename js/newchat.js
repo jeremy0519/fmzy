@@ -10,6 +10,7 @@ $(document).ready(function () {
             Waline.init({
                 el: '#vcomments',
                 serverURL: 'http://43.142.126.163:8360',
+                pageview:true,
               });
         },
         (error) => {

@@ -32,6 +32,7 @@ $(document).ready(function () {
     async function count() {
         const query = new Parse.Query(classData);
         query.limit(1000);
+        query.descending("lastLogin")
         const results = await query.find();
         $("#count").text("有" + results.length + "位执行者连接到浮梦之屿总部。");
         for (var i = 0; i < results.length; i++) {
