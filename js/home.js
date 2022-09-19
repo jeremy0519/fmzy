@@ -91,7 +91,7 @@ $(document).ready(function () {
             $("#register").text(xxx.createdAt.toLocaleDateString());
             $("#lastlogin").text(xxx.get("lastLogin").toLocaleDateString());
             $("#page").text("帕普齐斯好感：" + xxx.get("Pagehakhaogan"));
-            $("#tang").text("唐血鸿好感：" + xxx.get("Tanghaogan"));
+            $("#tang").text("裴良谨好感：" + xxx.get("Tanghaogan"));
             $("#binxia").text("彬夏好感：" + xxx.get("Binxiahaogan"));
             $("#dugu").text("独孤秋夜好感：" + xxx.get("Duguqiuyehaogan"));
             $("#yimeng").text("异梦好感：" + xxx.get("Yimenghaogan"));

@@ -71,7 +71,7 @@ $(document).ready(function () {
                         html: [
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">小唐和冬哥是哪个班的？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">小裴和冬哥是哪个班的？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option1" name="Question1" value="1">
                         <label class="form-check-label" for="Question1Option1">9班</label>
@@ -109,7 +109,7 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">綮冬和唐血鸿的数学老师姓是什么</p>
+                    <p class="mb-1 mt-2 text-start text-primary">綮冬和裴良谨的数学老师姓是什么</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option1" name="Question3" value="1">
                         <label class="form-check-label" for="Question3Option1">李</label>
@@ -147,7 +147,7 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">在0-2中，当綮冬从唐血鸿梦境中脱离时，后排女生所说的两人卖点是什么？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">在0-2中，当綮冬从裴良谨梦境中脱离时，后排女生所说的两人卖点是什么？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option1" name="Question5" value="1">
                         <label class="form-check-label" for="Question5Option1">沉稳闷骚攻x阳光沙雕受</label>
@@ -232,7 +232,7 @@ $(document).ready(function () {
                     `,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">唐密辛《褪色的王冠·遇见》中，他偷偷带回家的书叫？（9个字，无书名号）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">裴密辛《褪色的王冠·遇见》中，他偷偷带回家的书叫？（9个字，无书名号）</p>
                     <input type="text" class="form-control" id="Question10">
                     `,
                             `
@@ -372,7 +372,7 @@ $(document).ready(function () {
                         html: [
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">小唐和冬哥是哪个班的？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">小裴和冬哥是哪个班的？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option1" name="Question1" value="1">
                         <label class="form-check-label" for="Question1Option1">9班</label>
@@ -410,7 +410,7 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">綮冬和唐血鸿的数学老师姓是什么</p>
+                    <p class="mb-1 mt-2 text-start text-primary">綮冬和裴良谨的数学老师姓是什么</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option1" name="Question3" value="1">
                         <label class="form-check-label" for="Question3Option1">李</label>
@@ -448,7 +448,7 @@ $(document).ready(function () {
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">在0-2中，当綮冬从唐血鸿梦境中脱离时，后排女生所说的两人卖点是什么？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">在0-2中，当綮冬从裴良谨梦境中脱离时，后排女生所说的两人卖点是什么？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option1" name="Question5" value="1">
                         <label class="form-check-label" for="Question5Option1">沉稳闷骚攻x阳光沙雕受</label>
@@ -533,7 +533,7 @@ $(document).ready(function () {
                     `,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">唐密辛《褪色的王冠·遇见》中，他偷偷带回家的书叫？（9个字，无书名号）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">裴密辛《褪色的王冠·遇见》中，他偷偷带回家的书叫？（9个字，无书名号）</p>
                     <input type="text" class="form-control" id="Question10">
                     `,
                             `

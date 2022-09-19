@@ -79,7 +79,7 @@ $(document).ready(function () {
             } else {
                 $("#v-pills-Tang-tab").attr("class", "nav-link text-secondary"); //添加灰色
                 $("#v-pills-Tang-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
-                $("#v-pills-Tang-tab").attr("data-bs-title", "未达成唐血鸿人设条件，达成条件：唐好感达到1000000000"); //设置悬停文字
+                $("#v-pills-Tang-tab").attr("data-bs-title", "未达成裴良谨人设条件，达成条件：裴好感达到1000000000"); //设置悬停文字
                 //激活tooltip（悬停时的文本）
                 new bootstrap.Tooltip($("#v-pills-Tang-tab"));
             }
@@ -475,7 +475,7 @@ $(document).ready(function () {
             } else {
                 $("#v-pills-Crown1-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary
                 $("#v-pills-Crown1-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
-                $("#v-pills-Crown1-tab").attr("data-bs-title", "未达成“遇见”条件。达成条件：唐血鸿好感最高达到过10."); //设置悬停文字
+                $("#v-pills-Crown1-tab").attr("data-bs-title", "未达成“遇见”条件。达成条件：裴良谨好感最高达到过10."); //设置悬停文字
                 //激活tooltip（悬停时的文本）
                 new bootstrap.Tooltip($("#v-pills-Crown1-tab"));
             }
@@ -491,7 +491,7 @@ $(document).ready(function () {
             } else {
                 $("#v-pills-Crown2-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary
                 $("#v-pills-Crown2-tab").attr("data-bs-toggle", "tooltip"); //添加悬停效果
-                $("#v-pills-Crown2-tab").attr("data-bs-title", "未达成“宴会”条件。达成条件：唐血鸿好感最高达到过20."); //设置悬停文字
+                $("#v-pills-Crown2-tab").attr("data-bs-title", "未达成“宴会”条件。达成条件：裴良谨好感最高达到过20."); //设置悬停文字
                 //激活tooltip（悬停时的文本）
                 new bootstrap.Tooltip($("#v-pills-Crown2-tab"));
             }
