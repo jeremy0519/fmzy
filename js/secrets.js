@@ -74,7 +74,7 @@ $(document).ready(function () {
                 $("#v-pills-Tang-tab").attr("data-bs-target", "#v-pills-Tang"); //设置连接位置
                 $("#v-pills-Tang").html(`
                 <p class="mb-0">1038</p>
-                <p class="mb-0">936</p>
+                <p class="mb-0">1535</p>
                 `); //设置内容
             } else {
                 $("#v-pills-Tang-tab").attr("class", "nav-link text-secondary"); //添加灰色

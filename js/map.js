@@ -136,151 +136,151 @@ $(document).ready(function () {
                 xCoordinate: -2,
                 yCoordinate: 2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[1] = {
                 xCoordinate: -1,
                 yCoordinate: 2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[2] = {
                 xCoordinate: 0,
                 yCoordinate: 2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[3] = {
                 xCoordinate: 1,
                 yCoordinate: 2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[4] = {
                 xCoordinate: 2,
                 yCoordinate: 2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[5] = {
                 xCoordinate: -2,
                 yCoordinate: 1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[6] = {
                 xCoordinate: -1,
                 yCoordinate: 1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[7] = {
                 xCoordinate: 0,
                 yCoordinate: 1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[8] = {
                 xCoordinate: 1,
                 yCoordinate: 1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[9] = {
                 xCoordinate: 2,
                 yCoordinate: 1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[10] = {
                 xCoordinate: -2,
                 yCoordinate: 0,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[11] = {
                 xCoordinate: -1,
                 yCoordinate: 0,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[12] = {
                 xCoordinate: 0,
                 yCoordinate: 0,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[13] = {
                 xCoordinate: 1,
                 yCoordinate: 0,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[14] = {
                 xCoordinate: 2,
                 yCoordinate: 0,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[15] = {
                 xCoordinate: -2,
                 yCoordinate: -1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[16] = {
                 xCoordinate: -1,
                 yCoordinate: -1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[17] = {
                 xCoordinate: 0,
                 yCoordinate: -1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[18] = {
                 xCoordinate: 1,
                 yCoordinate: -1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[19] = {
                 xCoordinate: 2,
                 yCoordinate: -1,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[20] = {
                 xCoordinate: -2,
                 yCoordinate: -2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[21] = {
                 xCoordinate: -1,
                 yCoordinate: -2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[22] = {
                 xCoordinate: 0,
                 yCoordinate: -2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[23] = {
                 xCoordinate: 1,
                 yCoordinate: -2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
             gezi[24] = {
                 xCoordinate: 2,
                 yCoordinate: -2,
                 type: "zhuxian",
-                content: "936",
+                content: "1535",
             };
 
             function handleClickEvent(num) {

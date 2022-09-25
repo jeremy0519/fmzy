@@ -188,6 +188,7 @@ $(document).ready(function () {
                 zx[8] = "好像我~从不曾~离开你的身旁~"
                 zx[9] =
                     "他觉得这首曲子也很适合恋人……可是他没有说出来。裴也没有再说话，好像的确想起来了什么。"
+                window.local_Tanghaogan = window.local_Tanghaogan + 1
             }
             step08(zx)
         }
@@ -210,6 +211,7 @@ $(document).ready(function () {
                 zx[8] = "好像我~从不曾~离开你的身旁~"
                 zx[9] =
                     "他觉得这首曲子也很适合恋人……可是他没有说出来。裴也没有再说话，好像的确想起来了什么。"
+                window.local_Tanghaogan = window.local_Tanghaogan + 1
             }
             step08(zx)
         }
@@ -235,6 +237,7 @@ $(document).ready(function () {
                 zx[8] = "好像我~从不曾~离开你的身旁~"
                 zx[9] =
                     "他觉得这首曲子也很适合恋人……可是他没有说出来。裴也没有再说话，好像的确想起来了什么。"
+                window.local_Tanghaogan = window.local_Tanghaogan + 1
             }
             window.local_Tanghaogan = window.local_Tanghaogan + 3
             step08(zx)
