@@ -333,7 +333,7 @@ $(document).ready(function () {
                                         return user.save().then(() => {
                                             alertSuccessInForm("答案全部正确，通关！3秒后刷新以进入下一层");
                                             setTimeout(() => {
-                                                window.location.href = "http://43.142.126.163/test.html";
+                                                window.location.href = "/test.html";
                                             }, 3000);
                                         });
                                     });
@@ -346,7 +346,7 @@ $(document).ready(function () {
                             //答案错误
                             alertErrorInForm("非常抱歉，该层巴别塔未通关成功。3秒后为你刷新重试");
                             setTimeout(() => {
-                                window.location.href = "http://43.142.126.163/test.html";
+                                window.location.href = "/test.html";
                             }, 3000);
                         }
                     });
@@ -359,11 +359,7 @@ $(document).ready(function () {
         } else if (window.local_CurrentTestLevel == 1) {
             //那么显示第二关的form
             $("#title").text("执行者考核#1：通天的巴别塔-Lv2");
-            $("#LevelNow").text("当前等级Lv1，推荐进度：0-3满配好感");
-            $("#formplaceholder").html(`
-                 <p>WIP</p>
-                 `);
-            /*
+            $("#LevelNow").text("当前等级Lv1，推荐进度：0-4满配好感");
             $("#startchallenge").click(function () {
                 if (window.local_Testpractice != 0) {
                     //Question编号固定
@@ -372,182 +368,182 @@ $(document).ready(function () {
                         html: [
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">小裴和冬哥是哪个班的？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">裴良谨生日是？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option1" name="Question1" value="1">
-                        <label class="form-check-label" for="Question1Option1">9班</label>
+                        <label class="form-check-label" for="Question1Option1">1.27</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option2" name="Question1" value="2">
-                        <label class="form-check-label" for="Question1Option2">5班</label>
+                        <label class="form-check-label" for="Question1Option2">8.11</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option3" name="Question1" value="3">
-                        <label class="form-check-label" for="Question1Option3">6班</label>
+                        <label class="form-check-label" for="Question1Option3">10.17</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question1Option4" name="Question1" value="4">
-                        <label class="form-check-label" for="Question1Option4">4班</label>
+                        <label class="form-check-label" for="Question1Option4">显然都不是</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">彬夏的生日是什么时候？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">0-4环境适配音？ </p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option1" name="Question2" value="1">
-                        <label class="form-check-label" for="Question2Option1">7.13</label>
+                        <label class="form-check-label" for="Question2Option1">《万吨匿名信》</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option2" name="Question2" value="2">
-                        <label class="form-check-label" for="Question2Option2">1.27</label>
+                        <label class="form-check-label" for="Question2Option2">《Bright Purity》</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option3" name="Question2" value="3">
-                        <label class="form-check-label" for="Question2Option3">10.24</label>
+                        <label class="form-check-label" for="Question2Option3">《Melty World》</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question2Option4" name="Question2" value="4">
-                        <label class="form-check-label" for="Question2Option4">8.11</label>
+                        <label class="form-check-label" for="Question2Option4">显然都不对，我们爱酱最可爱了\(^o^\)</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">綮冬和裴良谨的数学老师姓是什么</p>
+                    <p class="mb-1 mt-2 text-start text-primary">执行者终端里，浮梦之屿官方运营名称？ </p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option1" name="Question3" value="1">
-                        <label class="form-check-label" for="Question3Option1">李</label>
+                        <label class="form-check-label" for="Question3Option1">殊烟</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option2" name="Question3" value="2">
-                        <label class="form-check-label" for="Question3Option2">沈</label>
+                        <label class="form-check-label" for="Question3Option2">异梦</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option3" name="Question3" value="3">
-                       <label class="form-check-label" for="Question3Option3">王</label>
+                       <label class="form-check-label" for="Question3Option3">逗号</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question3Option4" name="Question3" value="4">
-                       <label class="form-check-label" for="Question3Option4">都不是</label>
+                       <label class="form-check-label" for="Question3Option4">省略号</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">孤儿院门口挂的锦旗包括以下哪一个？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">系统权限调用最符合以下哪一个描述？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question4Option1" name="Question4" value="1">
-                        <label class="form-check-label" for="Question4Option1">鞠躬尽瘁，死而后已</label>
+                        <label class="form-check-label" for="Question4Option1">用户列表</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question4Option2" name="Question4" value="2">
-                        <label class="form-check-label" for="Question4Option2">赠人玫瑰，手留余香</label>
+                        <label class="form-check-label" for="Question4Option2">用户个人主页</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question4Option3" name="Question4" value="3">
-                       <label class="form-check-label" for="Question4Option3">诲人不倦</label>
+                       <label class="form-check-label" for="Question4Option3">后台操控</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question4Option4" name="Question4" value="4">
-                       <label class="form-check-label" for="Question4Option4">都不是</label>
+                       <label class="form-check-label" for="Question4Option4">显然都不是</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">在0-2中，当綮冬从裴良谨梦境中脱离时，后排女生所说的两人卖点是什么？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">綮冬的能力不包括以下哪一项？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option1" name="Question5" value="1">
-                        <label class="form-check-label" for="Question5Option1">沉稳闷骚攻x阳光沙雕受</label>
+                        <label class="form-check-label" for="Question5Option1">在梦境中引导他人意识</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option2" name="Question5" value="2">
-                        <label class="form-check-label" for="Question5Option2">阳光沙雕攻x沉稳闷骚受</label>
+                        <label class="form-check-label" for="Question5Option2">进入噩梦</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option3" name="Question5" value="3">
-                       <label class="form-check-label" for="Question5Option3">沉稳高冷攻x阳光开朗受</label>
+                       <label class="form-check-label" for="Question5Option3">做梦成真</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question5Option4" name="Question5" value="4">
-                       <label class="form-check-label" for="Question5Option4">显然都不是，我冬哥肯定是攻！！1</label>
+                       <label class="form-check-label" for="Question5Option4">显然都有，我冬哥万古第一神！！！</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">帕普齐斯在浮梦之屿的编号是？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">浮梦之屿ver0.2.0不包括以下哪项更新</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option1" name="Question6" value="1">
-                        <label class="form-check-label" for="Question6Option1">#1772</label>
+                        <label class="form-check-label" for="Question6Option1">0-1更新</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option2" name="Question6" value="2">
-                        <label class="form-check-label" for="Question6Option2">#039</label>
+                        <label class="form-check-label" for="Question6Option2">0-2更新</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option3" name="Question6" value="3">
-                       <label class="form-check-label" for="Question6Option3">#1987</label>
+                       <label class="form-check-label" for="Question6Option3">个人主页与用户列表上线</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question6Option4" name="Question6" value="4">
-                       <label class="form-check-label" for="Question6Option4">#1643</label>
+                       <label class="form-check-label" for="Question6Option4">显然都包括。（顶层）不忘初心，坚持主线领导，浮梦之屿正带领人们走向0-5的光辉未来。</label>
                     </div>`,
                             `
-                    <p class="mb-1 mt-2 text-start text-primary">系统权限调用是什么功能？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">执行者峰会接口是？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question7Option1" name="Question7" value="1">
-                        <label class="form-check-label" for="Question7Option1">个人主页</label>
+                        <label class="form-check-label" for="Question7Option1">8080</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question7Option2" name="Question7" value="2">
-                        <label class="form-check-label" for="Question7Option2">剧情回溯</label>
+                        <label class="form-check-label" for="Question7Option2">1535</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question7Option3" name="Question7" value="3">
-                        <label class="form-check-label" for="Question7Option3">执行者考核</label>
+                        <label class="form-check-label" for="Question7Option3">1038</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question7Option4" name="Question7" value="4">
-                       <label class="form-check-label" for="Question7Option4">以上都不是</label>
+                       <label class="form-check-label" for="Question7Option4">936</label>
                     </div>`,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">綮冬在浮梦之屿的编号是？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">以下哪位人物在0-5前，没有出现？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option1" name="Question8" value="1">
-                        <label class="form-check-label" for="Question8Option1">#103</label>
+                        <label class="form-check-label" for="Question8Option1">镰</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option2" name="Question8" value="2">
-                        <label class="form-check-label" for="Question8Option2">#1643</label>
+                        <label class="form-check-label" for="Question8Option2">烁</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option3" name="Question8" value="3">
-                       <label class="form-check-label" for="Question8Option3">#039</label>
+                       <label class="form-check-label" for="Question8Option3">弘</label>
                     </div>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question8Option4" name="Question8" value="4">
-                       <label class="form-check-label" for="Question8Option4">都不是</label>
+                       <label class="form-check-label" for="Question8Option4">显然都露过脸</label>
                     </div>`,
                         ],
-                        correct: [4, 4, 2, 3, 1, 4, 4, 3],
+                        correct: [4, 4, 2, 1, 3, 3, 3, 4],
                     };
 
                     const tiankongti = {
                         html: [
                             `
-                    <p class="mb-1 mt-2 text-start text-primary">收留镰的孤儿院名字是？（5个字）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">镰日记中，C开头的一篇是？（首字母大写）</p>
                     <input type="text" class="form-control" id="Question9">
                     `,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">裴密辛《褪色的王冠·遇见》中，他偷偷带回家的书叫？（9个字，无书名号）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">在0-3中，綮冬在路上哼的歌名叫《》。（三个字，不用书名号）</p>
                     <input type="text" class="form-control" id="Question10">
                     `,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">镰的日记中，I开头的诗名字叫？（首字母大写）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">唐血鸿密辛1名字是？（五个字）</p>
                     <input type="text" class="form-control" id="Question11">
                     `,
                             `
 
-                    <p class="mb-1 mt-2 text-start text-primary">浮梦之屿官方邮箱是？（格式：_______@____.____）</p>
+                    <p class="mb-1 mt-2 text-start text-primary">帕普齐斯密辛1名字是？（五个字）</p>
                     <input type="text" class="form-control" id="Question12">
                     `,
                         ],
-                        correct: ["阳光福利院", "马克思与恩格斯选集", "Isolated", "Fmzy_Official@163.com"],
+                        correct: ["Crush", "萱草花", "褪色的王冠", "与命运相拥"],
                     };
                     //扣门票
                     window.local_Testpractice -= 1;
@@ -634,7 +630,7 @@ $(document).ready(function () {
                                         return user.save().then(() => {
                                             alertSuccessInForm("答案全部正确，通关！3秒后刷新以进入下一层");
                                             setTimeout(() => {
-                                                window.location.href = "http://43.142.126.163/test.html";
+                                                window.location.href = "/test.html";
                                             }, 3000);
                                         });
                                     });
@@ -647,7 +643,7 @@ $(document).ready(function () {
                             //答案错误
                             alertErrorInForm("非常抱歉，该层巴别塔未通关成功。3秒后为你刷新重试");
                             setTimeout(() => {
-                                window.location.href = "http://43.142.126.163/test.html";
+                                window.location.href = "/test.html";
                             }, 3000);
                         }
                     });
@@ -657,7 +653,6 @@ $(document).ready(function () {
                 `);
                 }
             });
-            */
         } else if (window.local_CurrentTestLevel == 2) {
             //那么显示第三关的form
             $("#title").text("执行者考核#1：通天的巴别塔-Lv3");

@@ -123,10 +123,10 @@ $(document).ready(function () {
                 $("#v-pills-crush-tab").attr("data-bs-toggle", "pill");
                 $("#v-pills-crush-tab").attr("data-bs-target", "#v-pills-crush"); //设置连接位置
                 $("#v-pills-crush").html(`
-                <p class="mb-0">没有月光的夜晚</p>
-                <p class="mb-0">即使在灯下伸手亦不见五指。</p>
-                <p class="mb-0">一个美妙的梦却悄然而至</p>
-                <p class="mb-0">梦里藏着我的双眼。</p>
+                <p class="mb-0">将自己的愉悦偷偷种在文字中</p>
+                <p class="mb-0">看文字车水马龙，吵闹喧嚣；</p>
+                <p class="mb-0">等到夜深万籁俱寂之时</p>
+                <p class="mb-0">再看那颗种子，枝繁叶茂。</p>
                 `); //设置内容
             } else {
                 $("#v-pills-crush-tab").attr("class", "nav-link text-secondary"); //添加灰色即secondary

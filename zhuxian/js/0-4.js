@@ -229,7 +229,7 @@ $(document).ready(function () {
     function step09() {
         const form = document.createElement("form")
         form.innerHTML = `<form>
-        <button type="submit" class="btn btn-out3line-info mt-2">Continue</button>
+        <button type="submit" class="btn btn-outline-info mt-2">Continue</button>
         </form>`
         form.id = "form"
         $("#formPlaceholder").append(form)
@@ -238,6 +238,9 @@ $(document).ready(function () {
     }
     function step10() {
         $("#form").submit(function (event) {
+            $("#liveAlertPlaceholder").empty()
+            $("#zhuxianArea").empty()
+            $("#formPlaceholder").empty()
             setPercent(33.3)
             var zx = new Array()
         zx[0] =
@@ -303,6 +306,10 @@ $(document).ready(function () {
     }
     function step13() {
         $("#form").submit(function (event) {
+            event.preventDefault()
+            $("#liveAlertPlaceholder").empty()
+            $("#zhuxianArea").empty()
+            $("#formPlaceholder").empty()
             setPercent(50)
             var raw=`“你们护工一般干什么？”在前往宿舍区的时候，綮冬问烁——就是男孩。既然院长让他们接替护工的工作，那么了解一下护工干什么那也是情理之中。
             嗯，我真的太聪明了。綮冬微微勾起嘴角。
@@ -522,6 +529,9 @@ $(document).ready(function () {
     }
     function step20() {
         $("#form").submit(function (event) {
+            $("#liveAlertPlaceholder").empty()
+            $("#zhuxianArea").empty()
+            $("#formPlaceholder").empty()
             setPercent(83.3)
             var raw=`门内，镰坐着没动。他再次开口，言语里的愤怒已经收敛了许多：“镰参见师傅。”
             “镰小子，你今天干得不错。”苍老的声音从房内的各个角落传出，声音低沉，好似从九幽下传出，“还有，不用说师傅，我们是共生关系，不需要对我这么恭敬。”
@@ -568,6 +578,9 @@ $(document).ready(function () {
     }
     function step23() {
         $("#form").submit(function (event) {
+            $("#liveAlertPlaceholder").empty()
+            $("#zhuxianArea").empty()
+            $("#formPlaceholder").empty()
             var raw=`綮冬和裴良谨兜兜转转又回到了班级边，綮冬四处张望时，裴忽然叫住他：“我觉得这个班人有点太少了。”
             确实，綮冬进来时就觉得隐隐约约有点不对。虽然教室是坐满了，看着人是很多，但是仔细一数就发现一共座位也就二十几个。这放到三个年级里所有的孩子就很可疑了。“难不成，镰给搞班级分化和孤立？”綮冬忽然觉得灵光乍现！他觉得自己真是太聪明了。
             “呵呵。”裴冷笑两声，“没有意义，难道是练习宫斗？”
@@ -576,7 +589,7 @@ $(document).ready(function () {
             或许是长期阅读侦探小说，他渴望知道秘密。
             下课铃很快敲响，綮冬几乎是冲向食堂，钱什么的都小case，他现在饿鬼附身，吃饭为大。然而，当他看到半蔫的青菜和漂浮着白色泡沫状的，不知道什么动物的体油的汤，他忽然又不想吃了。
             “你不应该对一个有老鼠窝的食堂的饭菜过于苛责。”裴把唯一一道荤菜——红烧肉叉进口中，咀嚼后不禁皱起眉头，“我收回刚刚的那一句话，猪肉一尝就是放了不知道多久，烧的也乏善可陈，只是把酱汁和烂肉炖在一起而已，猪膻味也没除。这位厨师大概也是庸才。”
-            “好详细，你怎么知道的？看来你很熟悉红烧肉。”綮冬叹气，“哎，你们家那么有钱，是不是天天可以去饭馆吃红烧肉啊？”綮冬只知道裴家里非常有钱，但是从没到他家里去过。裴倒也没有透露过他家的地址，只是说他住的地方是。
+            “好详细，你怎么知道的？看来你很熟悉红烧肉。”綮冬叹气，“哎，你们家那么有钱，是不是天天可以去饭馆吃红烧肉啊？”綮冬只知道裴家里非常有钱，但是从没到他家里去过。裴倒也没有透露过他家的地址，只是说他住的地方是出租屋。
             “大概是吧，这里红烧肉和我家厨师叔叔烧的差多了。”裴把肉咽下，喉结滚动，“肥而不腻，软而不烂，这是红烧肉的基本功。”
             “厨师……叔叔？”綮冬一愣，被富有之力戳到心上，“你们家究竟多有钱啊？”同时他心上忽然涌起一种奇怪的感受：他不告诉他家的地址，是不是怕我被打击啊……
             他恍然大悟，然后悲愤涌上心头。
@@ -605,7 +618,7 @@ $(document).ready(function () {
             接下来还有一些细细碎碎的谈话，綮冬已经听不见了。他趴在门上的身影缓缓竖直，双眼充满落寞。
             “原来……如此。”`
             var zx=raw.trim().split(/\n/)
-            astep24(zx)
+            step24(zx)
         })
     }
     async function step24(list) {
@@ -694,7 +707,7 @@ $(document).ready(function () {
                             yyy.set("Yimengmax", window.local_Yimenghaogan)
                         }
                         return yyy.save().then(function () {
-                            step21()
+                            step27()
                         })
                     })
                 },
@@ -704,7 +717,7 @@ $(document).ready(function () {
             )
         })
     }
-    function step21() {
+    function step27() {
         // 展示最终页面
         const ele = document.createElement("h5")
         ele.setAttribute("class", "text-center")

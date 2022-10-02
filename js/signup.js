@@ -65,7 +65,7 @@ $(document).ready(function () {
                     user.set("lastLogin", d);
                     user.set("tansuo", 0);
                     user.set("diaocha", 0);
-                    user.set("explored", []);
+                    user.set("qiandao", []);
                     user.save().then(
                         (user) => {
                             alertSuccess("注册成功，3秒后跳转首页");

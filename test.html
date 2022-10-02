@@ -42,7 +42,7 @@
 
         <div class="container-fluid">
             <img class="bi me-2" width="32" height="32" src="/logo.ico"></img>
-            <a class="navbar-brand" href="#">浮梦之屿</a>
+            <a class="navbar-brand" href="/">浮梦之屿</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,6 +53,7 @@
                     <li class="nav-item"><a href="/chat.html" class="nav-link">执行者终端</a></li>
                     <li class="nav-item"><a href="/list.html" class="nav-link">系统权限调用</a></li>
                     <li class="nav-item"><a href="/test.html" class="nav-link active">执行者考核</a></li>
+                    <li class="nav-item"><a href="http://43.142.126.163:1038" class="nav-link">执行者峰会</a></li>
                     <li class="nav-item dropdown-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,39 +78,6 @@
             aria-controls="offcanvasExample">
             歌单
         </a>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title text-center" id="offcanvasExampleLabel">播放列表</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <p class="text-start">#1</p>
-                <div class="text-center">
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                        src="//music.163.com/outchain/player?type=2&id=1374221428&auto=0&height=66"></iframe>
-                </div>
-                <p class="text-start">#2</p>
-                <div class="text-center">
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                        src="//music.163.com/outchain/player?type=2&id=1330348068&auto=0&height=66"></iframe>
-                </div>
-                <p class="text-start">#3</p>
-                <div class="text-center">
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                        src="//music.163.com/outchain/player?type=2&id=574566207&auto=0&height=66"></iframe>
-                </div>
-                <p class="text-start">#4</p>
-                <div class="text-center">
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                        src="//music.163.com/outchain/player?type=2&id=1412559986&auto=0&height=66"></iframe>
-                </div>
-                <p class="text-start">#5（裴良谨专属音乐）</p>
-                <div class="text-center">
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                        src="//music.163.com/outchain/player?type=2&id=1954244403&auto=0&height=66"></iframe>
-                </div>
-            </div>
-        </div>
         <hr>
         <div id="formplaceholder">
             <a class="btn btn-outline-success" role="button" id="startchallenge">
@@ -117,8 +85,41 @@
             </a>
         </div>
     </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-center" id="offcanvasExampleLabel">播放列表</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-start">#1</p>
+            <div class="text-center">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=1374221428&auto=0&height=66"></iframe>
+            </div>
+            <p class="text-start">#2</p>
+            <div class="text-center">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=1330348068&auto=0&height=66"></iframe>
+            </div>
+            <p class="text-start">#3</p>
+            <div class="text-center">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=574566207&auto=0&height=66"></iframe>
+            </div>
+            <p class="text-start">#4</p>
+            <div class="text-center">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=1412559986&auto=0&height=66"></iframe>
+            </div>
+            <p class="text-start">#5（裴良谨专属音乐）</p>
+            <div class="text-center">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=1954244403&auto=0&height=66"></iframe>
+            </div>
+        </div>
+    </div>
 
-    <p class="mt-5 mb-3 text-muted">&copy; 2022</p> 
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     <!--toast-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
