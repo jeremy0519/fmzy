@@ -481,7 +481,7 @@ $(document).ready(function () {
                        <label class="form-check-label" for="Question6Option4">显然都包括。（顶层）不忘初心，坚持主线领导，浮梦之屿正带领人们走向0-5的光辉未来。</label>
                     </div>`,
                             `
-                    <p class="mb-1 mt-2 text-start text-primary">执行者峰会接口是？</p>
+                    <p class="mb-1 mt-2 text-start text-primary">执行者峰会端口号是？</p>
                     <div class="form-check text-start">
                         <input class="form-check-input" type="radio" id="Question7Option1" name="Question7" value="1">
                         <label class="form-check-label" for="Question7Option1">8080</label>
