@@ -31,18 +31,65 @@ $(document).ready(function () {
         window.location.href = "#";
     }
 
+    function alertInfo(message) {
+        alertPlaceholder.empty();
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+            `<div class="alert fade show alert-info alert-dismissible d-flex align-items-center" role="alert">`,
+            `   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"><use xlink:href="#info-fill"/></svg>`,
+            `   <div class="d-inline">${message}</div>`,
+            '   <button id="closebtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            "</div>",
+        ].join("");
+        alertPlaceholder.append(wrapper);
+        window.location.href = "#";
+    }
     if (localStorage.getItem("objectId") != undefined) {
+        function qiandao() {
+            const objid = localStorage.getItem("objectId");
+            const query = new Parse.Query(classData);
+            query.get(objid).then(
+                (xxx) => {
+                    xxx.save().then(() => {
+                        var date = new Date();
+                        var yyy = xxx.get("qiandao");
+                        yyy.push(date)
+                        xxx.set("qiandao", yyy);
+                        return xxx.save().then(()=>{
+                            $("div.alert-info").remove()
+                            alertSuccess("签到成功！")
+                        });
+                    });
+                },
+                (error) => {
+                    alertError(error.message + "（你可以点击注销并重新登录）");
+                }
+            );
+        }
         const objid = localStorage.getItem("objectId");
         const query = new Parse.Query(classData);
         query.get(objid).then(
             (xxx) => {
                 const yyy = xxx.get("username");
+                var temp = xxx.get("qiandao").length - 1;
+                var userLastQiandao = xxx.get("qiandao")[temp];
+                if (!userLastQiandao) {
+                    //从来没有签到过
+                    alertInfo(`执行者大人，您从来没有<b id="qd" style="cursor:pointer">签到</b>过呢`)
+                    $("#qd").click(()=>{qiandao()})
+                }
+                //那么看看今天签了没
+                else if (!isToday(userLastQiandao)) {
+                        alertInfo(`您今天还没有<b id="qd" style="cursor:pointer">签到</b>呢`)
+                        $("#qd").click(()=>{qiandao()})
+                    }
+                
                 $("#navbarDarkDropdownMenuLink").text("Signed in as: " + yyy);
                 var ll = xxx.get("lastLogin").toLocaleDateString();
                 xxx.save().then(() => {
                     var date = new Date();
                     if (date.toLocaleDateString() != ll) {
-                        xxx.set("Testpractice", xxx.get("Testpractice") + 2);
+                        xxx.set("Testpractice", xxx.get("Testpractice") + 1);
                     }
                     xxx.set("lastLogin", date);
                     return xxx.save();
@@ -59,7 +106,18 @@ $(document).ready(function () {
             $("div.toast-body").text(content);
             toast.show();
         }
-
+        /**
+         * 
+         * @param {Date} date
+         */
+        function isToday(date) {
+            var rage = new Date()
+            if (date.toLocaleDateString() == rage.toLocaleDateString()) {
+                return 1
+            } else {
+                return 0
+            }
+        }
         //BEGIN MESSAGE
         const senderList = new Array();
         senderList[1] = "？";

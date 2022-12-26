@@ -41,6 +41,7 @@ $(document).ready(function () {
                 $("#welcomeMessage").append(wrapper);
             },
             (error) => {
+                console.log(error)
                 alertError(error.message + "（你可以点击注销并重新登录）");
             }
         );
@@ -69,6 +70,7 @@ $(document).ready(function () {
                             window.location.href = "secrets.html";
                         },
                         (error) => {
+                            console.log(error)
                             alertError(error.message + "（你可以点击注销并重新登录）");
                         }
                     );
@@ -82,6 +84,7 @@ $(document).ready(function () {
                             window.location.href = "/zhuxian/" + yyy + ".html";
                         },
                         (error) => {
+                            console.log(error)
                             alertError(error.message + "（你可以点击注销并重新登录）");
                         }
                     );
@@ -112,6 +115,7 @@ $(document).ready(function () {
                             });
                         },
                         (error) => {
+                            console.log(error)
                             alertError(error.message + "（你可以点击注销并重新登录）");
                         }
                     );
@@ -119,6 +123,7 @@ $(document).ready(function () {
             }
         },
         (error) => {
+            console.log(error)
             alertError(error.message + "（你可以点击注销并重新登录）");
         }
     );
@@ -132,6 +137,7 @@ $(document).ready(function () {
                 window.location.href = "/zhuxian/" + yyy + ".html";
             },
             (error) => {
+                console.log(error)
                 alertError(error.message + "（你可以点击注销并重新登录）");
             }
         );
@@ -162,6 +168,7 @@ $(document).ready(function () {
                 });
             },
             (error) => {
+                console.log(error)
                 alertError(error.message + "（你可以点击注销并重新登录）");
             }
         );
