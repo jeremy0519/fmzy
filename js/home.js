@@ -1,8 +1,8 @@
 Parse.initialize("fmzy");
-Parse.serverURL = "http://43.142.126.163/parse";
+Parse.serverURL = "https://43.142.126.163/parse";
 const classData = Parse.Object.extend("fmzy");
 const query = new Parse.Query(classData);
-query.get(location.href.substring(32)).then(
+query.get(location.href.substring(33)).then(
     () => {},
     () => {
         window.location.href = "/index.html";
