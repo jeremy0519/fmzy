@@ -1,8 +1,0 @@
-node_modules
-vendor
-*.log
-*~
-*.kate-swp
-.*.swp
-composer.lock
-.eslintcache
