@@ -1,5 +1,5 @@
 Parse.initialize("fmzy")
-Parse.serverURL = 'http://43.142.126.163/parse'
+Parse.serverURL = 'https://43.142.126.163/parse'
 const classData = Parse.Object.extend("fmzy")
 
 function check() {
